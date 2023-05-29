@@ -1,0 +1,20 @@
+<svg width="24px" height="24px" viewBox="0 0 200 200" version="1.1"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M0 0L200 0L200 200L0 200L0 0Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="Grupo-2">
+    <path d="M0 0L200 0L200 200L0 200L0 0Z" id="Fondo" fill="#FFFFFF" fill-opacity="0" fill-rule="evenodd" stroke="none" />
+    <g clip-path="url(#mask_1)">
+      <g id="Grupo" transform="translate(6.8999023 0)">
+        <path d="M93.1 0L93.1 0L93.1 0L0 33.2L14.2 156.3L93.1 200L93.1 200L93.1 200L172 156.3L186.2 33.2L93.1 0Z" id="Polígono" fill="#DD0031" fill-rule="evenodd" stroke="none" />
+        <path d="M93.1001 0L93.1001 22.2L93.1001 22.1L93.1001 123.4L93.1001 123.4L93.1001 200L93.1001 200L172 156.3L186.2 33.2L93.1001 0L93.1001 0Z" id="Polígono" fill="#C3002F" fill-rule="evenodd" stroke="none" />
+        <path d="M93.0999 22.1L34.8999 152.6L34.8999 152.6L56.5999 152.6L56.5999 152.6L68.2999 123.4L117.7 123.4L129.4 152.6L129.4 152.6L151.1 152.6L151.1 152.6L93.0999 22.1L93.0999 22.1L93.0999 22.1L93.0999 22.1L93.0999 22.1L93.0999 22.1ZM110.1 105.4L76.0999 105.4L93.0999 64.5L110.1 105.4L110.1 105.4Z" id="Forma" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

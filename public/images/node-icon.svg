@@ -1,0 +1,33 @@
+<svg width="24" height="24" viewBox="0 0 23.995117 24.000244" version="1.1"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="14.266276" y1="4.191292" x2="5.7354817" y2="21.48646" id="gradient_1nnn">
+      <stop offset="0%" stop-color="#3F873F" />
+      <stop offset="32.96%" stop-color="#3F8B3D" />
+      <stop offset="63.67%" stop-color="#3E9638" />
+      <stop offset="93.40999%" stop-color="#3DA92E" />
+      <stop offset="100%" stop-color="#3DAE2B" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="8.842418" y1="13.225415" x2="32.644867" y2="-4.2523975" id="gradient_2nnn">
+      <stop offset="13.76%" stop-color="#3F873F" />
+      <stop offset="40.16%" stop-color="#52A044" />
+      <stop offset="71.29%" stop-color="#64B749" />
+      <stop offset="90.81%" stop-color="#6ABF4B" />
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="-0.89717203" y1="11.994963" x2="20.71813" y2="11.994963" id="gradient_3nnn">
+      <stop offset="9.19165%" stop-color="#6ABF4B" />
+      <stop offset="28.71%" stop-color="#64B749" />
+      <stop offset="59.84%" stop-color="#52A044" />
+      <stop offset="86.23999%" stop-color="#3F873F" />
+    </linearGradient>
+  </defs>
+  <g id="Grupo-2">
+    <g id="Grupo" transform="translate(1.5244207 0)">
+      <path d="M11.0277 0.154614C10.6726 -0.0462523 10.251 -0.0462523 9.89604 0.154614L0.554703 5.57998C0.199706 5.78097 0 6.16043 0 6.5624L0 17.4353C0 17.8372 0.221857 18.2167 0.554703 18.4177L9.89604 23.8431C10.251 24.0439 10.6726 24.0439 11.0277 23.8431L20.3689 18.4177C20.724 18.2167 20.9236 17.8372 20.9236 17.4353L20.9236 6.5624C20.9236 6.16043 20.7018 5.78097 20.3689 5.57998L11.0277 0.154614L11.0277 0.154614Z" id="Forma" fill="url(#gradient_1nnn)" stroke="none" />
+      <path d="M20.3918 5.57997L11.0062 0.154604C10.9175 0.109954 10.8065 0.0653045 10.7178 0.0430371L0.200462 18.1498C0.289182 18.2614 0.400168 18.3507 0.511039 18.4177L9.89679 23.8431C10.1631 23.9993 10.4736 24.0439 10.7621 23.9546L20.636 5.78096C20.5694 5.69166 20.4807 5.62462 20.3918 5.57997L20.3918 5.57997Z" id="Forma" fill="url(#gradient_2nnn)" stroke="none" />
+      <path d="M20.3915 18.4174C20.6577 18.261 20.8574 17.9931 20.9461 17.7028L10.6729 0.0203252C10.4067 -0.0243245 10.1181 -0.00205829 9.87414 0.154274L0.554953 5.55726L10.6063 23.9989C10.7394 23.9766 10.8948 23.9319 11.028 23.865L20.3915 18.4174L20.3915 18.4174Z" id="Forma" fill="url(#gradient_3nnn)" stroke="none" />
+    </g>
+    <path d="M0 0.00254825L23.995 0.00254825L23.995 23.9975L0 23.9975L0 0.00254825Z" id="Rectángulo" fill="none" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>
