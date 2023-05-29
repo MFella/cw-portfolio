@@ -1,6 +1,6 @@
 import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
-import { WorkTileProps } from '~/components/shared/types/workTileProps'
-import { $translate as t, formatDate as fd, useSpeakLocale } from 'qwik-speak'
+import type { WorkTileProps } from '~/components/shared/types/workTileProps'
+import { useFormatDate, useSpeakLocale, useTranslate } from 'qwik-speak'
 import * as luxon from 'luxon'
 
 const getDurationTitle = (
@@ -16,6 +16,9 @@ const getDurationTitle = (
 }
 
 export default component$((props: WorkTileProps) => {
+    const t = useTranslate()
+    const fd = useFormatDate()
+
     const elapsedTime = useSignal('')
 
     const speakLocale = useSpeakLocale()
@@ -103,7 +106,7 @@ export default component$((props: WorkTileProps) => {
                                 {
                                     dateStyle: 'medium',
                                 },
-                                speakLocale
+                                speakLocale.lang
                             )}
                         </strong>
                         <b class="px-1"> &rarr;</b>
@@ -115,7 +118,7 @@ export default component$((props: WorkTileProps) => {
                                       {
                                           dateStyle: 'medium',
                                       },
-                                      speakLocale
+                                      speakLocale.lang
                                   )}
                         </strong>
                         <strong></strong>

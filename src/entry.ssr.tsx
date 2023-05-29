@@ -18,6 +18,7 @@ import {
 import { manifest } from '@qwik-client-manifest'
 import { isDev } from '@builder.io/qwik/build'
 import Root from './root'
+import { config } from './speak-config'
 
 export function extractBase({ serverData }: RenderOptions): string {
     if (!isDev && serverData?.locale) {
@@ -33,8 +34,9 @@ export default function (opts: RenderToStreamOptions) {
         ...opts,
         // Use container attributes to set attributes on the html tag.
         containerAttributes: {
-            lang: 'en-us',
+            lang: opts.serverData?.locale || config.defaultLocale.lang,
             ...opts.containerAttributes,
         },
+        base: extractBase,
     })
 }

@@ -1,5 +1,5 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik'
-import { $translate as t } from 'qwik-speak'
+import { useTranslate } from 'qwik-speak'
 import { TechnologyTypes } from '~/components/shared/types/technologyTypes'
 
 type Preference = {
@@ -8,6 +8,7 @@ type Preference = {
 }
 
 export default component$(() => {
+    const t = useTranslate()
     const cvButtonUrl: { url: string } = { url: '' }
 
     const contactUrlList: Array<{

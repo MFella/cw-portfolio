@@ -1,10 +1,11 @@
 import { component$ } from '@builder.io/qwik'
-import { $translate as t } from 'qwik-speak'
+import { useTranslate } from 'qwik-speak'
 import { KnowledgeSection } from '~/components/shared/types/knowledgeSection'
 import { WorkTileProps } from '~/components/shared/types/workTileProps'
 import Tile from '../tile/tile'
 
 export default component$(() => {
+    const t = useTranslate()
     const workTiles: Array<WorkTileProps> = [
         {
             mainImgSrc: '/images/bigpicture-icon.svg',
@@ -84,7 +85,7 @@ export default component$(() => {
                 {
                     label: 'app.live-demo-button-label',
                     iconUrl: '/images/play-icon.svg',
-                    anchorUrl: 'https://github.com/MFella/Chatterbox',
+                    anchorUrl: 'https://github.com/MFella/Ezinfo',
                     iconName: 'Live demo  ',
                 },
             ],
