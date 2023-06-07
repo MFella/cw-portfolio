@@ -6,13 +6,13 @@ import { qwikSpeakInline } from 'qwik-speak/inline';
 
 export default defineConfig(() => {
   return {
-    plugins: [qwikCity(), qwikVite(), tsconfigPaths(),
+    plugins: [qwikCity(), qwikVite(),
       qwikSpeakInline({
-        basePath: './',
         assetsPath: 'i18n',
         supportedLangs: ['en-US', 'pl-PL'],
         defaultLang: 'pl-PL'
-    }),],
+    }),
+    tsconfigPaths()],
     preview: {
       headers: {
         'Cache-Control': 'public, max-age=600',

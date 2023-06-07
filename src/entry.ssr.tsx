@@ -20,9 +20,20 @@ import { isDev } from '@builder.io/qwik/build'
 import Root from './root'
 import { config } from './speak-config'
 
+function getAppropriateLocale(incomingLocale: string): 'pl-PL' | 'en-US' {
+    switch (incomingLocale) {
+        case 'pl':
+            return 'pl-PL'
+        case 'en-GB':
+            return 'en-US'
+        default:
+            return 'pl-PL'
+    }
+}
+
 export function extractBase({ serverData }: RenderOptions): string {
     if (!isDev && serverData?.locale) {
-        return '/build/' + serverData.locale
+        return '/build/' + getAppropriateLocale(serverData.locale)
     } else {
         return '/build'
     }

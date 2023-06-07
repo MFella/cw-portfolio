@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$ } from '@builder.io/qwik'
+import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
 import { useTranslate } from 'qwik-speak'
 import { TechnologyTypes } from '~/components/shared/types/technologyTypes'
 
@@ -9,7 +9,7 @@ type Preference = {
 
 export default component$(() => {
     const t = useTranslate()
-    const cvButtonUrl: { url: string } = { url: '' }
+    const cvButtonUrl = useSignal<string>('')
 
     const contactUrlList: Array<{
         url: string
@@ -38,8 +38,10 @@ export default component$(() => {
     ]
 
     const cvUrls: { englishUrl: string; polishUrl: string } = {
-        polishUrl: '',
-        englishUrl: '',
+        polishUrl:
+            'https://drive.google.com/file/d/1nXmZTNF1LZUrgeb81fOXI-tJNM3vQtJv/view?usp=drive_link',
+        englishUrl:
+            'https://drive.google.com/file/d/1WeaNUfsRbWzzVAI3VDnv5XWrYNKh1aqF/view?usp=drive_link',
     }
 
     const preferences: Array<Preference> = [
@@ -81,15 +83,16 @@ export default component$(() => {
         const result = new RegExp(
             '(?:^|; )' + encodeURIComponent('locale') + '=([^;]*)'
         ).exec(document.cookie)
-        if (result) {
-            cvButtonUrl.url =
-                JSON.parse(result[1])['lang'] === 'pl-PL'
-                    ? cvUrls.polishUrl
-                    : cvUrls.englishUrl
+        if (!result) {
+            cvButtonUrl.value = cvUrls.polishUrl
+
             return
         }
 
-        cvButtonUrl.url = cvUrls.polishUrl
+        cvButtonUrl.value =
+            JSON.parse(result[1])['lang'] === 'pl-PL'
+                ? cvUrls.polishUrl
+                : cvUrls.englishUrl
     })
 
     return (
@@ -122,7 +125,7 @@ export default component$(() => {
                     </span>
                 </span>
                 <a
-                    href={cvButtonUrl.url}
+                    href={cvButtonUrl.value}
                     target="_blank"
                     rel="noreferrer nofollow"
                 >

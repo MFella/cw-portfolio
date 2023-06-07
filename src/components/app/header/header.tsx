@@ -66,7 +66,7 @@ export default component$(() => {
 
 export const headerClasses: string =
     'header-container sticky top-0 left-0 z-10 flex h-[48.7px] justify-end overflow-x-auto border-b' +
-    ' border-details bg-auto px-2 transition-all md:px-4 bg-white-0 dark:bg-blue-gray-700 bg-white'
+    ' border-details bg-auto px-2 transition-all md:px-4 bg-white-0 dark:bg-blue-gray-700 bg-white overflow-hidden'
 const buttonClasses: string =
     'rounded-md border border-slate-300 dark:border-gray-200 border-details bg-misc font-medium shadow-sm transition-all hover:bg-details text-xs' +
     ' py-1 px-2 mx-1'
