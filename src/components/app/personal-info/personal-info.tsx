@@ -39,9 +39,9 @@ export default component$(() => {
 
     const cvUrls: { englishUrl: string; polishUrl: string } = {
         polishUrl:
-            'https://drive.google.com/file/d/1nXmZTNF1LZUrgeb81fOXI-tJNM3vQtJv/view?usp=drive_link',
+            'https://drive.google.com/file/d/1dbzYT7h3ykaybCuu_ilnHT-itMi4WB4L/view?usp=drive_link',
         englishUrl:
-            'https://drive.google.com/file/d/1WeaNUfsRbWzzVAI3VDnv5XWrYNKh1aqF/view?usp=drive_link',
+            'https://drive.google.com/file/d/1nJ39imNDnN2_XA3wuRszql6UP71vDS-x/view?usp=drive_link',
     }
 
     const preferences: Array<Preference> = [
