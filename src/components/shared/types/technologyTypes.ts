@@ -28,6 +28,7 @@ type Tools =
     | 'rx-angular'
     | 'rxjs'
     | 'prettier'
+    | 'socket-io'
 type TestLibraries = 'jest' | 'karma' | 'jasmine' | 'cypress'
 type Databases =
     | 'mongodb'

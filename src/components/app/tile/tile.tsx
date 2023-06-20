@@ -112,7 +112,11 @@ export default component$((props: WorkTileProps) => {
                         <b class="px-1"> &rarr;</b>
                         <strong>
                             {isActivityStillInProgress()
-                                ? t('app.activity-in-progress-suffix')
+                                ? t(
+                                      'app.activity-in-progress-suffix',
+                                      {},
+                                      speakLocale.lang
+                                  )
                                 : fd(
                                       props.endDate,
                                       {

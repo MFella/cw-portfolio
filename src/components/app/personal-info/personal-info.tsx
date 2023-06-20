@@ -13,15 +13,15 @@ export default component$(() => {
 
     const contactUrlList: Array<{
         url: string
-        icon: 'wp' | 'linkedin' | 'github'
+        icon: 'gmail' | 'linkedin' | 'github'
         displayUrl: string
         imageClasses: Array<string>
     }> = [
         {
-            url: 'mailto:mfella@wp.pl',
-            icon: 'wp',
-            displayUrl: 'mfella@wp.pl',
-            imageClasses: ['w-5', 'h-5', 'invert', 'dark:invert-0'],
+            url: 'mailto:cezary.wrzesinski.dev@gmail.com',
+            icon: 'gmail',
+            displayUrl: 'cezary.wrzesinski.dev@gmail.com',
+            imageClasses: ['w-5', 'h-5', 'dark:invert'],
         },
         {
             url: 'https://www.linkedin.com/in/czarek-wrzesinski-67a083191/',
@@ -39,9 +39,9 @@ export default component$(() => {
 
     const cvUrls: { englishUrl: string; polishUrl: string } = {
         polishUrl:
-            'https://drive.google.com/file/d/1dbzYT7h3ykaybCuu_ilnHT-itMi4WB4L/view?usp=drive_link',
+            'https://drive.google.com/file/d/1iutstGnEpeOW3lg1hUakswqS7Mqe5JFY/view?usp=drive_link',
         englishUrl:
-            'https://drive.google.com/file/d/1nJ39imNDnN2_XA3wuRszql6UP71vDS-x/view?usp=drive_link',
+            'https://drive.google.com/file/d/1E9g2tDmG-m6x7RyorRg7p8dRZreUNK-s/view?usp=drive_link',
     }
 
     const preferences: Array<Preference> = [

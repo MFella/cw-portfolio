@@ -69,6 +69,7 @@ export default component$(() => {
             id: Number(Math.random()).toString(32),
             technologies: [
                 'angular',
+                'rxjs',
                 'bootstrap',
                 'aws-s3',
                 'nestjs',
@@ -85,31 +86,39 @@ export default component$(() => {
                 {
                     label: 'app.live-demo-button-label',
                     iconUrl: '/images/play-icon.svg',
-                    anchorUrl: 'https://github.com/MFella/Ezinfo',
+                    anchorUrl: 'https://161.35.67.128/',
                     iconName: 'Live demo  ',
                 },
             ],
         },
         {
-            mainImgSrc: '/images/chatterbox-icon.png',
+            mainImgSrc: '/images/freedev-icon.svg',
             mainImgClasses: [],
-            title: 'app.project-chatterbox-title',
+            title: 'app.project-freedev-title',
             descriptions: [0].map(
-                (item) => 'app.project-chatterbox-description-' + item
+                (item) => 'app.project-freedev-description-' + item
             ),
             id: Number(Math.random()).toString(32),
-            technologies: ['angular', 'aws-s3', 'nestjs', 'Postgresql'],
+            technologies: [
+                'angular',
+                'rxjs',
+                'primeng',
+                'aws-s3',
+                'nestjs',
+                'socket-io',
+                'Postgresql',
+            ],
             actionLinks: [
                 {
                     label: 'app.to-repo-button-label',
                     iconUrl: '/images/github-icon.svg',
-                    anchorUrl: 'https://github.com/MFella/Chatterbox',
+                    anchorUrl: 'https://github.com/MFella/FreeDev',
                     iconName: 'Github',
                 },
                 {
                     label: 'app.live-demo-button-label',
                     iconUrl: '/images/play-icon.svg',
-                    anchorUrl: 'https://github.com/MFella/Chatterbox',
+                    anchorUrl: 'https://github.com/MFella/FreeDev',
                     iconName: 'Live demo  ',
                 },
             ],
@@ -122,7 +131,15 @@ export default component$(() => {
                 (item) => 'app.project-procast-description-' + item
             ),
             id: Number(Math.random()).toString(32),
-            technologies: ['angular', 'aws-s3', 'nestjs', 'mongodb'],
+            technologies: [
+                'angular',
+                'rxjs',
+                'material-ui',
+                'aws-s3',
+                'nestjs',
+                'prisma',
+                'supabase',
+            ],
             actionLinks: [
                 {
                     label: 'app.to-repo-button-label',
