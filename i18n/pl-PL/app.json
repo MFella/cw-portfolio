@@ -32,10 +32,13 @@
     "project-ezinfo-description-0": "Celem aplikacji było przechowywanie notatek oraz plików w bezpieczny sposób",
     "project-procast-title": "Procast",
     "project-procast-description-0": "Głównym celem aplikacji było stworzenie odpowiedniej predykcji, bazując na zadanym zbiorze danych(z poprzedniego okresu czasu)",
-    "practice": "Więcej niż 2 lata doświadczenia",
+    "practice": "Około 3 lata doświadczenia",
     "to-repo-button-label": "Do kodu",
     "live-demo-button-label": "Demo",
     "work-bigpicture-description-0": "Utrzymywanie i tworzenie komponentów do modułu Gantt oraz rozwój domeny data type dla aplikacji Big Picture, Big Picture Enterprise, Big Gantt oraz Big Template",
-    "work-bigpicture-title": "Appfire - BigPicture"
+    "work-bigpicture-title": "Appfire - BigPicture",
+    "work-rockwell-description-0": "Rozwijanie przekazanych projektów związanych z ekosystemem Factory Talk (Network Browser, Shortcut Editor, Tag Browser, Action Manager)",
+    "work-rockwell-description-1": "Trzymanie się designu zgodnie z wewnętrznym systemem projektowym",
+    "work-rockwell-title": "Rockwell Automation"
  }
 }

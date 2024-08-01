@@ -8,11 +8,34 @@ export default component$(() => {
     const t = useTranslate()
     const workTiles: Array<WorkTileProps> = [
         {
+            mainImgSrc: '/images/rockwell-icon.svg',
+            mainImgClasses: [],
+            title: 'app.work-rockwell-title',
+            startDate: new Date(2023, 8, 2),
+            endDate: new Date(),
+            descriptions: ['app.work-rockwell-description-0', 'app.work-rockwell-description-1'],
+            technologies: [
+                'angular',
+                'typescript',
+                'karma',
+                'jasmine',
+                'mocha',
+                'node',
+                'expressjs',
+                'grpc',
+                'git',
+                'jenkins',
+                'jira',
+            ],
+            id: Number(Math.random()).toString(32),
+            actionLinks: [],
+        },
+        {
             mainImgSrc: '/images/bigpicture-icon.svg',
             mainImgClasses: [],
             title: 'app.work-bigpicture-title',
             startDate: new Date(2021, 4, 1),
-            endDate: new Date(),
+            endDate: new Date(2023, 8, 1),
             descriptions: ['app.work-bigpicture-description-0'],
             technologies: [
                 'angular',
@@ -28,7 +51,7 @@ export default component$(() => {
             ],
             id: Number(Math.random()).toString(32),
             actionLinks: [],
-        },
+        }
     ]
 
     const educationTiles: Array<Omit<WorkTileProps, 'technologies'>> = [
@@ -43,19 +66,7 @@ export default component$(() => {
             ),
             id: Number(Math.random()).toString(32),
             actionLinks: [],
-        },
-        {
-            mainImgSrc: '/images/wsb-icon.svg',
-            mainImgClasses: [],
-            title: 'app.education-wsb-title',
-            startDate: new Date(2022, 3, 14),
-            endDate: new Date(),
-            descriptions: [0, 1].map(
-                (item) => 'app.education-wsb-description-' + item
-            ),
-            id: Number(Math.random()).toString(32),
-            actionLinks: [],
-        },
+        }
     ]
 
     const projectTiles: Array<Omit<WorkTileProps, 'startDate' | 'endDate'>> = [

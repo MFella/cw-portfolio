@@ -25,7 +25,7 @@
     "knowledge-subsection-ide-title": "IDE",
     "knowledge-subsection-state-management-libraries-title": "State management libraries",
     "knowledge-subsection-environment-tools-title": "Environment tools",
-    "practice": "More than 2 years of experience",
+    "practice": "Approximately 3 years of experience",
     "project-section-title": "Projects",
     "project-freedev-title": "FreeDev",
     "project-freedev-description-0": "Purpose of project was to create PWA application, using WebSockets technolony",
@@ -36,6 +36,9 @@
     "to-repo-button-label": "To repo",
     "live-demo-button-label": "Live demo",
     "work-bigpicture-description-0": "Maintenance and development of components for the Gantt module and development of the data type domain for Big Picture, Big Picture Enterprise, Big Gantt and Big Template applications",
-    "work-bigpicture-title": "Appfire - BigPicture"
+    "work-bigpicture-title": "Appfire - BigPicture",
+    "work-rockwell-description-0": "Developing of handovered projects associated with Factory Talk domain (Network Browser, Shortcut Editor, Tag Browser, Action Manager)",
+    "work-rockwell-description-1": "Keeping up-to-date with internal design system",
+    "work-rockwell-title": "Rockwell Automation"
   }
 }
