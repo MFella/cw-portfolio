@@ -11,7 +11,7 @@ export default component$(() => {
             mainImgSrc: '/images/rockwell-icon.svg',
             mainImgClasses: [],
             title: 'app.work-rockwell-title',
-            startDate: new Date(2023, 8, 2),
+            startDate: new Date(2023, 8, 1, 12),
             endDate: new Date(),
             descriptions: ['app.work-rockwell-description-0', 'app.work-rockwell-description-1'],
             technologies: [
@@ -34,8 +34,8 @@ export default component$(() => {
             mainImgSrc: '/images/bigpicture-icon.svg',
             mainImgClasses: [],
             title: 'app.work-bigpicture-title',
-            startDate: new Date(2021, 4, 1),
-            endDate: new Date(2023, 8, 1),
+            startDate: new Date(2021, 4, 1, 12),
+            endDate: new Date(2023, 8, 0, 12),
             descriptions: ['app.work-bigpicture-description-0'],
             technologies: [
                 'angular',
