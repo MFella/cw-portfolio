@@ -74,7 +74,8 @@ export default component$((props: WorkTileProps) => {
                         >
                             <img
                                 src={'/images/' + technology + '-icon.svg'}
-                                alt=""
+                                alt={technology[0].toUpperCase() + technology.slice(1)}
+                                title={technology[0].toUpperCase() + technology.slice(1)}
                                 width="24"
                                 height="24"
                             />

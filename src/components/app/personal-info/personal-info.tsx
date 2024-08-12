@@ -39,9 +39,9 @@ export default component$(() => {
 
     const cvUrls: { englishUrl: string; polishUrl: string } = {
         polishUrl:
-            'https://drive.google.com/file/d/1iutstGnEpeOW3lg1hUakswqS7Mqe5JFY/view?usp=drive_link',
+            'https://drive.google.com/file/d/1VAkETfhhlYEwJpZILz4ZZTngAhmfTTBK/view?usp=sharing',
         englishUrl:
-            'https://drive.google.com/file/d/1E9g2tDmG-m6x7RyorRg7p8dRZreUNK-s/view?usp=drive_link',
+            'https://drive.google.com/file/d/1H5AEwTHd-bAwvtqYhfVQp6a6g-Q3UjLU/view?usp=sharing',
     }
 
     const preferences: Array<Preference> = [
@@ -50,8 +50,16 @@ export default component$(() => {
             extraClasses: ['bg-emerald-300', 'dark:bg-pink-300'],
         },
         {
-            technologyType: 'git',
-            extraClasses: ['dark:bg-orange-200', 'bg-stone-300'],
+            technologyType: 'typescript',
+            extraClasses: ['dark:bg-blue-200', 'bg-yellow-100'],
+        },
+        {
+            technologyType: 'material-ui',
+            extraClasses: ['dark:bg-amber-200 ', 'bg-cyan-200'],
+        },
+        {
+            technologyType: 'tailwind',
+            extraClasses: ['dark:bg-sky-200', 'bg-indigo-200'],
         },
         {
             technologyType: 'nestjs',
@@ -62,20 +70,12 @@ export default component$(() => {
             extraClasses: ['bg-teal-500 dark:bg-lime-200'],
         },
         {
-            technologyType: 'typescript',
-            extraClasses: ['dark:bg-blue-200', 'bg-yellow-100'],
-        },
-        {
-            technologyType: 'cypress',
+            technologyType: 'mongodb',
             extraClasses: ['dark:bg-slate-300', 'bg-fuchsia-200'],
         },
         {
-            technologyType: 'figma',
-            extraClasses: ['dark:bg-amber-200 ', 'bg-cyan-200'],
-        },
-        {
-            technologyType: 'tailwind',
-            extraClasses: ['dark:bg-sky-200', 'bg-indigo-200'],
+            technologyType: 'git',
+            extraClasses: ['dark:bg-orange-200', 'bg-stone-300'],
         },
     ]
 

@@ -21,6 +21,7 @@ type Tools =
     | 'nx'
     | 'jira'
     | 'github'
+    | 'gitlab'
     | 'typescript'
     | 'gerrit'
     | 'jenkins'
@@ -31,6 +32,7 @@ type Tools =
     | 'prettier'
     | 'socket-io'
     | 'grpc'
+    | 'oauth2';
 type TestLibraries = 'jest' | 'karma' | 'jasmine' | 'mocha' | 'cypress'
 type Databases =
     | 'mongodb'

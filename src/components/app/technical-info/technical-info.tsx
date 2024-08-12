@@ -23,6 +23,7 @@ export default component$(() => {
                 'node',
                 'expressjs',
                 'grpc',
+                'gitlab',
                 'git',
                 'jenkins',
                 'jira',
@@ -71,6 +72,32 @@ export default component$(() => {
 
     const projectTiles: Array<Omit<WorkTileProps, 'startDate' | 'endDate'>> = [
         {
+            mainImgSrc: '/images/cinemate-icon.png',
+            mainImgClasses: [],
+            title: 'app.project-cinemate-title',
+            descriptions: [0, 1].map((item: number) => 'app.project-cinemate-description-' + item),
+            id: Number(Math.random()).toString(32),
+            technologies: [
+                'angular',
+                'rxjs',
+                'material-ui',
+                'tailwind',
+                'oauth2',
+                'nestjs',
+                'prisma',
+                'supabase',
+                'nx'
+            ],
+            actionLinks: [
+                {
+                    label: 'app.to-repo-button-label',
+                    iconUrl: '/images/github-icon.svg',
+                    anchorUrl: 'https://github.com/MFella/cinemate',
+                    iconName: 'Github',
+                }
+            ]
+        },
+        {
             mainImgSrc: '/images/ezinfo-icon.png',
             mainImgClasses: [],
             title: 'app.project-ezinfo-title',
@@ -94,12 +121,12 @@ export default component$(() => {
                     anchorUrl: 'https://github.com/MFella/Ezinfo',
                     iconName: 'Github',
                 },
-                {
-                    label: 'app.live-demo-button-label',
-                    iconUrl: '/images/play-icon.svg',
-                    anchorUrl: 'https://161.35.67.128/',
-                    iconName: 'Live demo  ',
-                },
+                // {
+                //     label: 'app.live-demo-button-label',
+                //     iconUrl: '/images/play-icon.svg',
+                //     anchorUrl: 'https://161.35.67.128/',
+                //     iconName: 'Live demo  ',
+                // },
             ],
         },
         {
@@ -126,12 +153,12 @@ export default component$(() => {
                     anchorUrl: 'https://github.com/MFella/FreeDev',
                     iconName: 'Github',
                 },
-                {
-                    label: 'app.live-demo-button-label',
-                    iconUrl: '/images/play-icon.svg',
-                    anchorUrl: 'https://github.com/MFella/FreeDev',
-                    iconName: 'Live demo  ',
-                },
+                // {
+                //     label: 'app.live-demo-button-label',
+                //     iconUrl: '/images/play-icon.svg',
+                //     anchorUrl: 'https://github.com/MFella/FreeDev',
+                //     iconName: 'Live demo  ',
+                // },
             ],
         },
         {
@@ -177,7 +204,7 @@ export default component$(() => {
         },
         {
             title: 'knowledge-subsection-ci-cd-title',
-            items: ['gerrit', 'jira', 'github'],
+            items: ['gerrit', 'gitlab', 'jira', 'github'],
         },
         {
             title: 'knowledge-subsection-databases-title',
