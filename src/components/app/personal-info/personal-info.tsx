@@ -24,7 +24,7 @@ export default component$(() => {
             imageClasses: ['w-5', 'h-5', 'dark:invert'],
         },
         {
-            url: 'https://www.linkedin.com/in/czarek-wrzesinski-67a083191/',
+            url: 'https://www.linkedin.com/in/czarek-wrzesinski-dev/',
             icon: 'linkedin',
             displayUrl: 'linkedin.com',
             imageClasses: ['w-5', 'h-5', 'dark:invert'],
