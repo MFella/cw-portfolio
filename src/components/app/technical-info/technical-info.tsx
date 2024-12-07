@@ -13,7 +13,10 @@ export default component$(() => {
             title: 'app.work-rockwell-title',
             startDate: new Date(2023, 8, 1, 12),
             endDate: new Date(),
-            descriptions: ['app.work-rockwell-description-0', 'app.work-rockwell-description-1'],
+            descriptions: [
+                'app.work-rockwell-description-0',
+                'app.work-rockwell-description-1',
+            ],
             technologies: [
                 'angular',
                 'typescript',
@@ -52,7 +55,7 @@ export default component$(() => {
             ],
             id: Number(Math.random()).toString(32),
             actionLinks: [],
-        }
+        },
     ]
 
     const educationTiles: Array<Omit<WorkTileProps, 'technologies'>> = [
@@ -67,7 +70,7 @@ export default component$(() => {
             ),
             id: Number(Math.random()).toString(32),
             actionLinks: [],
-        }
+        },
     ]
 
     const projectTiles: Array<Omit<WorkTileProps, 'startDate' | 'endDate'>> = [
@@ -75,7 +78,9 @@ export default component$(() => {
             mainImgSrc: '/images/cinemate-icon.png',
             mainImgClasses: [],
             title: 'app.project-cinemate-title',
-            descriptions: [0, 1].map((item: number) => 'app.project-cinemate-description-' + item),
+            descriptions: [0, 1].map(
+                (item: number) => 'app.project-cinemate-description-' + item
+            ),
             id: Number(Math.random()).toString(32),
             technologies: [
                 'angular',
@@ -86,7 +91,7 @@ export default component$(() => {
                 'nestjs',
                 'prisma',
                 'supabase',
-                'nx'
+                'nx',
             ],
             actionLinks: [
                 {
@@ -94,8 +99,14 @@ export default component$(() => {
                     iconUrl: '/images/github-icon.svg',
                     anchorUrl: 'https://github.com/MFella/cinemate',
                     iconName: 'Github',
-                }
-            ]
+                },
+                {
+                    label: 'app.live-demo-button-label',
+                    iconUrl: '/images/play-icon.svg',
+                    anchorUrl: 'https://cinemate-jet.vercel.app/',
+                    iconName: 'Live demo  ',
+                },
+            ],
         },
         {
             mainImgSrc: '/images/ezinfo-icon.png',
