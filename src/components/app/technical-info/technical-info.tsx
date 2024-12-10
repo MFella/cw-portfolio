@@ -92,6 +92,10 @@ export default component$(() => {
                 'prisma',
                 'supabase',
                 'nx',
+                'github',
+                'github-actions',
+                'vercel',
+                'aws-ec2',
             ],
             actionLinks: [
                 {
@@ -104,6 +108,39 @@ export default component$(() => {
                     label: 'app.live-demo-button-label',
                     iconUrl: '/images/play-icon.svg',
                     anchorUrl: 'https://cinemate-jet.vercel.app/',
+                    iconName: 'Live demo  ',
+                },
+            ],
+        },
+        {
+            mainImgSrc: '/images/generic-auth-icon.jpg',
+            mainImgClasses: [],
+            title: 'app.project-generic-auth-title',
+            descriptions: [0, 1, 2].map(
+                (item: number) => 'app.project-generic-auth-description-' + item
+            ),
+            id: Number(Math.random()).toString(32),
+            technologies: [
+                'angular',
+                'rxjs',
+                'tailwind',
+                'oauth2',
+                'angular-elements',
+                'npm',
+                'github',
+                'vercel',
+            ],
+            actionLinks: [
+                {
+                    label: 'app.to-repo-button-label',
+                    iconUrl: '/images/github-icon.svg',
+                    anchorUrl: 'https://github.com/MFella/generic-auth',
+                    iconName: 'Github',
+                },
+                {
+                    label: 'app.live-demo-button-label',
+                    iconUrl: '/images/play-icon.svg',
+                    anchorUrl: 'https://generic-auth.vercel.app/',
                     iconName: 'Live demo  ',
                 },
             ],

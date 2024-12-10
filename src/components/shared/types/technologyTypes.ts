@@ -29,10 +29,14 @@ type Tools =
     | 'docker'
     | 'rx-angular'
     | 'rxjs'
+    | 'angular-elements'
     | 'prettier'
     | 'socket-io'
     | 'grpc'
-    | 'oauth2';
+    | 'oauth2'
+    | 'github-actions'
+    | 'aws-ec2'
+    | 'vercel'
 type TestLibraries = 'jest' | 'karma' | 'jasmine' | 'mocha' | 'cypress'
 type Databases =
     | 'mongodb'
