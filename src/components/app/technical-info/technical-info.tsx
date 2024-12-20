@@ -146,6 +146,42 @@ export default component$(() => {
             ],
         },
         {
+            mainImgSrc: '/images/procast-icon.svg',
+            mainImgClasses: [],
+            title: 'app.project-procast-title',
+            descriptions: [0].map(
+                (item) => 'app.project-procast-description-' + item
+            ),
+            id: Number(Math.random()).toString(32),
+            technologies: [
+                'angular',
+                'rxjs',
+                'ngrx',
+                'tensorflow',
+                'chartjs',
+                'ag-grid',
+                'material-ui',
+                'aws-s3',
+                'sheetjs',
+                'web-worker',
+                'vercel',
+            ],
+            actionLinks: [
+                {
+                    label: 'app.to-repo-button-label',
+                    iconUrl: '/images/github-icon.svg',
+                    anchorUrl: 'https://github.com/MFella/Procast',
+                    iconName: 'Github',
+                },
+                {
+                    label: 'app.live-demo-button-label',
+                    iconUrl: '/images/play-icon.svg',
+                    anchorUrl: 'https://procast-ochre.vercel.app/',
+                    iconName: 'Live demo  ',
+                },
+            ],
+        },
+        {
             mainImgSrc: '/images/ezinfo-icon.png',
             mainImgClasses: [],
             title: 'app.project-ezinfo-title',
@@ -207,32 +243,6 @@ export default component$(() => {
                 //     anchorUrl: 'https://github.com/MFella/FreeDev',
                 //     iconName: 'Live demo  ',
                 // },
-            ],
-        },
-        {
-            mainImgSrc: '/images/procast-icon.svg',
-            mainImgClasses: [],
-            title: 'app.project-procast-title',
-            descriptions: [0].map(
-                (item) => 'app.project-procast-description-' + item
-            ),
-            id: Number(Math.random()).toString(32),
-            technologies: [
-                'angular',
-                'rxjs',
-                'material-ui',
-                'aws-s3',
-                'nestjs',
-                'prisma',
-                'supabase',
-            ],
-            actionLinks: [
-                {
-                    label: 'app.to-repo-button-label',
-                    iconUrl: '/images/github-icon.svg',
-                    anchorUrl: 'https://github.com/MFella/Procast',
-                    iconName: 'Github',
-                },
             ],
         },
     ]
