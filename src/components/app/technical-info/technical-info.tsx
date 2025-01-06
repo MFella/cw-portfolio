@@ -12,7 +12,7 @@ export default component$(() => {
             mainImgClasses: [],
             title: 'app.work-rockwell-title',
             startDate: new Date(2023, 8, 1, 12),
-            endDate: new Date(),
+            endDate: new Date(2024, 11, 31, 12),
             descriptions: [
                 'app.work-rockwell-description-0',
                 'app.work-rockwell-description-1',
