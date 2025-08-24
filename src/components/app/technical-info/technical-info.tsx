@@ -1,12 +1,40 @@
 import { component$ } from '@builder.io/qwik'
 import { useTranslate } from 'qwik-speak'
-import { KnowledgeSection } from '~/components/shared/types/knowledgeSection'
-import { WorkTileProps } from '~/components/shared/types/workTileProps'
+import type { KnowledgeSection } from '~/components/shared/types/knowledgeSection'
+import type { WorkTileProps } from '~/components/shared/types/workTileProps'
 import Tile from '../tile/tile'
 
 export default component$(() => {
     const t = useTranslate()
     const workTiles: Array<WorkTileProps> = [
+        {
+            mainImgSrc: '/images/here-icon.svg',
+            mainImgClasses: [],
+            title: 'app.work-here-title',
+            startDate: new Date(2025, 1, 17, 12),
+            endDate: new Date(),
+            descriptions: [
+                'app.work-here-description-0',
+                'app.work-here-description-1',
+                'app.work-here-description-2',
+            ],
+            technologies: [
+                'typescript',
+                'node',
+                'rxjs',
+                'grpc',
+                'jest',
+                'react',
+                'kotlin',
+                'gitlab',
+                'git',
+                'jenkins',
+                'jira',
+            ],
+            id: Number(Math.random()).toString(32),
+            actionLinks: [],
+            role: 'app.work-here-role',
+        },
         {
             mainImgSrc: '/images/rockwell-icon.svg',
             mainImgClasses: [],
@@ -33,6 +61,7 @@ export default component$(() => {
             ],
             id: Number(Math.random()).toString(32),
             actionLinks: [],
+            role: 'app.work-rockwell-role',
         },
         {
             mainImgSrc: '/images/bigpicture-icon.svg',
@@ -55,25 +84,29 @@ export default component$(() => {
             ],
             id: Number(Math.random()).toString(32),
             actionLinks: [],
+            role: 'app.work-bigpicture-role',
         },
     ]
 
-    const educationTiles: Array<Omit<WorkTileProps, 'technologies'>> = [
-        {
-            mainImgSrc: '/images/wut-icon.svg',
-            mainImgClasses: ['rotate-90'],
-            title: 'app.education-wut-title',
-            startDate: new Date(2018, 9, 0),
-            endDate: new Date(2022, 1, 2),
-            descriptions: [0, 1, 2, 3].map(
-                (item) => 'app.education-wut-description-' + item
-            ),
-            id: Number(Math.random()).toString(32),
-            actionLinks: [],
-        },
-    ]
+    const educationTiles: Array<Omit<WorkTileProps, 'technologies' | 'role'>> =
+        [
+            {
+                mainImgSrc: '/images/wut-icon.svg',
+                mainImgClasses: ['rotate-90'],
+                title: 'app.education-wut-title',
+                startDate: new Date(2018, 9, 0),
+                endDate: new Date(2022, 1, 2),
+                descriptions: [0, 1, 2, 3].map(
+                    (item) => 'app.education-wut-description-' + item
+                ),
+                id: Number(Math.random()).toString(32),
+                actionLinks: [],
+            },
+        ]
 
-    const projectTiles: Array<Omit<WorkTileProps, 'startDate' | 'endDate'>> = [
+    const projectTiles: Array<
+        Omit<WorkTileProps, 'startDate' | 'endDate' | 'role'>
+    > = [
         {
             mainImgSrc: '/images/cinemate-icon.png',
             mainImgClasses: [],
@@ -314,6 +347,7 @@ export default component$(() => {
                                 technologies={item.technologies}
                                 id={item.id}
                                 actionLinks={item.actionLinks}
+                                role={item.role}
                             />
                         ))}
                     </ul>

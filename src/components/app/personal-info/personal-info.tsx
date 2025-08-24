@@ -1,6 +1,12 @@
-import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
+import {
+    component$,
+    useSignal,
+    useVisibleTask$,
+    useStylesScoped$,
+} from '@builder.io/qwik'
 import { useTranslate } from 'qwik-speak'
-import { TechnologyTypes } from '~/components/shared/types/technologyTypes'
+import type { TechnologyTypes } from '~/components/shared/types/technologyTypes'
+import styles from './personal-info.css'
 
 type Preference = {
     technologyType: TechnologyTypes
@@ -8,8 +14,12 @@ type Preference = {
 }
 
 export default component$(() => {
+    useStylesScoped$(styles)
     const t = useTranslate()
     const cvButtonUrl = useSignal<string>('')
+
+    const sectionRef = useSignal<Element>()
+    const sectionIsVisible = useSignal<boolean>(true)
 
     const contactUrlList: Array<{
         url: string
@@ -167,22 +177,42 @@ export default component$(() => {
                         ))}
                     </div>
                 </div>
-                <div class="flex flex-col items-center gap-1 md:items-start">
+                <div class="flex flex-col items-center gap-2 md:items-start">
                     <span class="font-semibold">{t('app.bio-contact')}</span>
                     {contactUrlList.map((contactUrl) => (
-                        <a
+                        <div
+                            ref={sectionRef}
+                            class="flex items-center justify-center items-center gap-2"
                             key={contactUrl.url}
-                            target="_blank"
-                            href={contactUrl.url}
-                            class="flex select-all items-center gap-2 text-sm pt-2"
                         >
-                            <img
-                                class={contactUrl.imageClasses.join(' ')}
-                                src={'/images/' + contactUrl.icon + '-icon.svg'}
-                                alt=""
-                            />
-                            <span>{contactUrl.displayUrl}</span>
-                        </a>
+                            <span
+                                class={
+                                    'absolute -left-6 transition-all' +
+                                    sectionIsVisible
+                                        ? 'animation-visible'
+                                        : ''
+                                }
+                            >
+                                ➡️
+                            </span>
+                            <a
+                                key={contactUrl.url}
+                                target="_blank"
+                                href={contactUrl.url}
+                                class="flex select-all items-center gap-2 text-sm pt-2 pb-1 transition-all"
+                            >
+                                <img
+                                    class={contactUrl.imageClasses.join(' ')}
+                                    src={
+                                        '/images/' +
+                                        contactUrl.icon +
+                                        '-icon.svg'
+                                    }
+                                    alt=""
+                                />
+                                <span>{contactUrl.displayUrl}</span>
+                            </a>
+                        </div>
                     ))}
                 </div>
             </div>

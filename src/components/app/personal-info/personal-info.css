@@ -1,0 +1,7 @@
+.animation {
+    @apply opacity-0 transition-opacity ease-in duration-700 delay-150;
+}
+
+.animation.isVisible {
+    @apply opacity-100;
+}

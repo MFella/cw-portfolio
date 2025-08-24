@@ -48,12 +48,20 @@ export default component$((props: WorkTileProps) => {
                     <div class="flex items-center justify-center">
                         <img
                             src={props.mainImgSrc}
-                            alt=""
-                            class={'w-6 h-6 ' + props.mainImgClasses.join(' ')}
+                            alt="Company logo"
+                            class={
+                                'w-8 h-8 box-content p-1 border-2 rounded-lg dark:bg-slate-400 transition-all' +
+                                props.mainImgClasses.join(' ')
+                            }
                         />
-                        <p class="flex gap-4 align-baseline font-squada text-sm pl-2">
-                            {t(props.title)}
-                        </p>
+                        <div class="flex flex-col gap-1 pl-2">
+                            <p class="flex gap-4 align-baseline font-squada text-sm font-bold">
+                                {t(props.title)}
+                            </p>
+                            {props.role && (
+                                <small class="italic">{t(props.role)}</small>
+                            )}
+                        </div>
                     </div>
                 </div>
                 <ul class="description-list flex flex-col gap-1 pl-1">
@@ -74,8 +82,14 @@ export default component$((props: WorkTileProps) => {
                         >
                             <img
                                 src={'/images/' + technology + '-icon.svg'}
-                                alt={technology[0].toUpperCase() + technology.slice(1)}
-                                title={technology[0].toUpperCase() + technology.slice(1)}
+                                alt={
+                                    technology[0].toUpperCase() +
+                                    technology.slice(1)
+                                }
+                                title={
+                                    technology[0].toUpperCase() +
+                                    technology.slice(1)
+                                }
                                 width="24"
                                 height="24"
                             />

@@ -1,4 +1,5 @@
-import { TechnologyTypes } from '~/components/shared/types/technologyTypes'
+import type { TechnologyTypes } from '~/components/shared/types/technologyTypes'
+
 export type WorkTileProps = {
     mainImgSrc: string
     mainImgClasses: Array<string>
@@ -9,6 +10,7 @@ export type WorkTileProps = {
     technologies: Array<TechnologyTypes>
     id: string
     actionLinks: Array<ActionLinkProps>
+    role?: string
 }
 
 type ActionLinkProps = {

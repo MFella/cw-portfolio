@@ -11,7 +11,7 @@ export type TechnologyTypes =
 
 type FrontendFrameworks = 'angular' | 'react' | 'qwik'
 type FrontendUiLibraries = 'bootstrap' | 'tailwind' | 'material-ui' | 'primeng'
-type BackendFrameworks = 'nestjs' | 'expressjs' | 'node'
+type BackendFrameworks = 'nestjs' | 'expressjs' | 'node' | 'kotlin'
 type Tools =
     | 'git'
     | 'eslint'
