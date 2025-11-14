@@ -56,12 +56,20 @@ export default component$(() => {
 
     const preferences: Array<Preference> = [
         {
-            technologyType: 'angular',
-            extraClasses: ['bg-emerald-300', 'dark:bg-pink-300'],
+            technologyType: 'nestjs',
+            extraClasses: ['bg-emerald-300', 'dark:bg-red-300'],
+        },
+        {
+            technologyType: 'node',
+            extraClasses: ['bg-teal-500 dark:bg-lime-200'],
         },
         {
             technologyType: 'typescript',
             extraClasses: ['dark:bg-blue-200', 'bg-yellow-100'],
+        },
+        {
+            technologyType: 'angular',
+            extraClasses: ['bg-emerald-300', 'dark:bg-pink-300'],
         },
         {
             technologyType: 'material-ui',
@@ -70,14 +78,6 @@ export default component$(() => {
         {
             technologyType: 'tailwind',
             extraClasses: ['dark:bg-sky-200', 'bg-indigo-200'],
-        },
-        {
-            technologyType: 'nestjs',
-            extraClasses: ['bg-emerald-300', 'dark:bg-red-300'],
-        },
-        {
-            technologyType: 'node',
-            extraClasses: ['bg-teal-500 dark:bg-lime-200'],
         },
         {
             technologyType: 'mongodb',

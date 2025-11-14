@@ -74,11 +74,11 @@ export default component$((props: WorkTileProps) => {
                         </li>
                     ))}
                 </ul>
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-4 justify-center">
                     {props.technologies.map((technology: string) => (
                         <span
                             key={technology}
-                            class="rounded-lg bg-misc p-1 transition-all flex justify-center items-center"
+                            class="rounded-md p-1 transition-all flex justify-center items-center dark:bg-white"
                         >
                             <img
                                 src={'/images/' + technology + '-icon.svg'}
@@ -102,7 +102,7 @@ export default component$((props: WorkTileProps) => {
                             key={link.anchorUrl}
                             href={link.anchorUrl}
                             target="_blank"
-                            class="flex opacity-90 hover:opacity-100 items-center rounded-md bg-gradient-to-r bg-emerald-300 hover:bg-emerald-400 dark:bg-purple-500 dark:hover:bg-purple-600 text-gray-700 dark:text-white px-3 py-2 text-sm font-semibold shadow-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            class={"flex opacity-90 hover:opacity-100 items-center rounded-md bg-gradient-to-r bg-emerald-300 hover:bg-emerald-400 dark:bg-purple-500 dark:hover:bg-purple-600 text-gray-700 dark:text-white px-3 py-2 text-sm font-semibold shadow-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " + link.extraClass }
                         >
                             <img
                                 src={link.iconUrl}

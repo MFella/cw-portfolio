@@ -137,12 +137,12 @@ export default component$(() => {
                     anchorUrl: 'https://github.com/MFella/cinemate',
                     iconName: 'Github',
                 },
-                {
-                    label: 'app.live-demo-button-label',
-                    iconUrl: '/images/play-icon.svg',
-                    anchorUrl: 'https://cinemate-jet.vercel.app/',
-                    iconName: 'Live demo  ',
-                },
+                // {
+                //     label: 'app.live-demo-button-label',
+                //     iconUrl: '/images/play-icon.svg',
+                //     anchorUrl: 'https://cinemate-jet.vercel.app/',
+                //     iconName: 'Live demo  ',
+                // },
             ],
         },
         {
@@ -170,12 +170,12 @@ export default component$(() => {
                     anchorUrl: 'https://github.com/MFella/generic-auth',
                     iconName: 'Github',
                 },
-                {
-                    label: 'app.live-demo-button-label',
-                    iconUrl: '/images/play-icon.svg',
-                    anchorUrl: 'https://generic-auth.vercel.app/',
-                    iconName: 'Live demo  ',
-                },
+                // {
+                //     label: 'app.live-demo-button-label',
+                //     iconUrl: '/images/play-icon.svg',
+                //     anchorUrl: 'https://generic-auth.vercel.app/',
+                //     iconName: 'Live demo  ',
+                // },
             ],
         },
         {
@@ -211,6 +211,7 @@ export default component$(() => {
                     iconUrl: '/images/play-icon.svg',
                     anchorUrl: 'https://procast-ochre.vercel.app/',
                     iconName: 'Live demo  ',
+                    extraClass: 'glowing-border',
                 },
             ],
         },
@@ -310,7 +311,7 @@ export default component$(() => {
         },
         {
             title: 'knowledge-subsection-environment-tools-title',
-            items: ['eslint', 'stylelint', 'prettier', 'nx', 'docker', 'rxjs'],
+            items: ['eslint', 'stylelint', 'prettier', 'nx', 'docker', 'rxjs', 'grpc'],
         },
         {
             title: 'knowledge-subsection-state-management-libraries-title',
