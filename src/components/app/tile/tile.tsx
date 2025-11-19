@@ -1,6 +1,6 @@
 import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
 import type { WorkTileProps } from '~/components/shared/types/workTileProps'
-import { useFormatDate, useSpeakLocale, useTranslate } from 'qwik-speak'
+import { useFormatDate, useSpeakLocale, inlineTranslate } from 'qwik-speak'
 import * as luxon from 'luxon'
 
 const getDurationTitle = (
@@ -16,7 +16,7 @@ const getDurationTitle = (
 }
 
 export default component$((props: WorkTileProps) => {
-    const t = useTranslate()
+    const t = inlineTranslate()
     const fd = useFormatDate()
 
     const elapsedTime = useSignal('')
@@ -50,7 +50,7 @@ export default component$((props: WorkTileProps) => {
                             src={props.mainImgSrc}
                             alt="Company logo"
                             class={
-                                'w-8 h-8 box-content p-1 border-2 rounded-lg dark:bg-slate-400 transition-all' +
+                                'w-8 h-8 box-content p-1 border-2 rounded-lg dark:bg-slate-400 transition-all border-gray-300 ' +
                                 props.mainImgClasses.join(' ')
                             }
                         />
@@ -114,7 +114,7 @@ export default component$((props: WorkTileProps) => {
                     ))}
                 </div>
                 {elapsedTime.value?.trim() !== '-' && (
-                    <span class="flex items-center justify-center rounded-full border border-details px-2 py-1 text-xs">
+                    <span class="flex items-center justify-center rounded-full border border-details px-2 py-1 text-xs border-gray-300">
                         <strong>
                             {fd(
                                 props.startDate,
@@ -149,4 +149,4 @@ export default component$((props: WorkTileProps) => {
 })
 
 const tileClasses =
-    'flex w-full gap-12 rounded-md border border-details bg-misc p-4 shadow-sm transition-all lg:w-[calc(50%-12px)]'
+    'flex w-full gap-12 rounded-md border border-details bg-misc p-4 shadow-sm transition-all lg:w-[calc(50%-12px)] border-gray-300 dark:border-transparent'

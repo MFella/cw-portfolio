@@ -6,7 +6,7 @@ import TechnicalInfo from '../technical-info/technical-info'
 export default component$(() => {
     return (
         <div class={classes}>
-            <div class="relative mb-12 flex w-full flex-col gap-4 px-2 md:mb-0 md:w-min md:p-3 md:px-4">
+            <div class="relative flex w-full flex-col gap-4 px-2 mb-0 md:w-min md:p-3 md:px-4">
                 <PersonalInfo />
             </div>
             <div class="flex flex-col gap-6 w-full">

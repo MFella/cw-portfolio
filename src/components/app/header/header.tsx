@@ -1,16 +1,16 @@
 import {
     component$,
-    Signal,
+    type Signal,
     useSignal,
     useStyles$,
     $,
     useVisibleTask$,
 } from '@builder.io/qwik'
 import Toggler from '../mode-toggler/mode-toggler'
-import { useSpeakConfig, SpeakLocale } from 'qwik-speak'
+import { useSpeakConfig, type SpeakLocale } from 'qwik-speak'
 
 const languages = ['pl-PL', 'en-US']
-export type Languages = (typeof languages)[number]
+export type Languages = (typeof languages)[number];
 
 export default component$(() => {
     const config = useSpeakConfig()
@@ -22,8 +22,10 @@ export default component$(() => {
         // Store locale in a cookie
         document.cookie = `locale=${JSON.stringify(
             speakLocale
-        )};max-age=86400;path=/`
-        selectedLanguage.value = speakLocale.lang
+        )};max-age=86400;path=/`;
+        if (languages.includes(speakLocale.lang)) {
+            selectedLanguage.value = speakLocale.lang
+        }
         location.reload()
     })
 
@@ -49,8 +51,8 @@ export default component$(() => {
                             class={
                                 buttonClasses +
                                 (selectedLanguage.value === speakLocale.lang
-                                    ? ' bg-emerald-300 dark:bg-purple-500'
-                                    : ' hover:bg-gray-100 dark:bg-slate-500 dark:hover:bg-slate-600 dark:text-gray-100')
+                                    ? ' bg-emerald-300 dark:!bg-purple-500'
+                                    : ' hover:bg-gray-100 dark:!bg-slate-500 dark:hover:!bg-slate-600 dark:text-gray-100')
                             }
                             onClick$={async () => await setLocale(speakLocale)}
                         >
@@ -65,11 +67,11 @@ export default component$(() => {
 })
 
 export const headerClasses: string =
-    'header-container sticky top-0 left-0 z-10 flex h-[48.7px] justify-end overflow-x-auto border-b' +
-    ' border-details bg-auto px-2 transition-all md:px-4 bg-white-0 dark:bg-blue-gray-700 bg-white overflow-hidden'
+    'header-container sticky top-0 left-0 z-10 flex h-[48.7px] justify-end overflow-x-auto border-b border-b-gray-300' +
+    ' border-details bg-white px-2 transition-all md:px-4 bg-white-0 dark:bg-blue-gray-700 bg-white overflow-hidden'
 const buttonClasses: string =
     'rounded-md border border-slate-300 dark:border-gray-200 border-details bg-misc font-medium shadow-sm transition-all hover:bg-details text-xs' +
-    ' py-1 px-2 mx-1'
+    ' py-1 px-2 mx-1 cursor-pointer'
 
 const customStyles = `
 .header-container {

@@ -4,9 +4,9 @@ import {
     useVisibleTask$,
     useStylesScoped$,
 } from '@builder.io/qwik'
-import { useTranslate } from 'qwik-speak'
+import { inlineTranslate } from 'qwik-speak';
 import type { TechnologyTypes } from '~/components/shared/types/technologyTypes'
-import styles from './personal-info.css'
+import styles from './personal-info.css?inline'
 
 type Preference = {
     technologyType: TechnologyTypes
@@ -15,7 +15,7 @@ type Preference = {
 
 export default component$(() => {
     useStylesScoped$(styles)
-    const t = useTranslate()
+    const t = inlineTranslate()
     const cvButtonUrl = useSignal<string>('')
 
     const sectionRef = useSignal<Element>()
@@ -27,31 +27,31 @@ export default component$(() => {
         displayUrl: string
         imageClasses: Array<string>
     }> = [
-        {
-            url: 'mailto:cezary.wrzesinski.dev@gmail.com',
-            icon: 'gmail',
-            displayUrl: 'cezary.wrzesinski.dev@gmail.com',
-            imageClasses: ['w-5', 'h-5', 'dark:invert'],
-        },
-        {
-            url: 'https://www.linkedin.com/in/czarek-wrzesinski-dev/',
-            icon: 'linkedin',
-            displayUrl: 'linkedin.com',
-            imageClasses: ['w-5', 'h-5', 'dark:invert'],
-        },
-        {
-            url: 'https://github.com/MFella',
-            icon: 'github',
-            displayUrl: 'github.com',
-            imageClasses: ['w-5', 'h-5', 'dark:invert'],
-        },
-    ]
+            {
+                url: 'mailto:cezary.wrzesinski.dev@gmail.com',
+                icon: 'gmail',
+                displayUrl: 'cezary.wrzesinski.dev@gmail.com',
+                imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
+            },
+            {
+                url: 'https://www.linkedin.com/in/czarek-wrzesinski-dev/',
+                icon: 'linkedin',
+                displayUrl: 'linkedin.com',
+                imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
+            },
+            {
+                url: 'https://github.com/MFella',
+                icon: 'github',
+                displayUrl: 'github.com',
+                imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
+            },
+        ]
 
     const cvUrls: { englishUrl: string; polishUrl: string } = {
         polishUrl:
-            'https://drive.google.com/file/d/1o3yuS82osSMtaXfcKgXo9fxfum-8qZhI/view?usp=sharing',
+            'https://drive.google.com/file/d/1jl21BRe7JtsmODMOKoDvI3UqUYOmSUEf/view?usp=sharing',
         englishUrl:
-            'https://drive.google.com/file/d/1g_IfHSoGnFdjyldaKRx5sFno2npmIzzZ/view?usp=sharing',
+            'https://drive.google.com/file/d/1jl21BRe7JtsmODMOKoDvI3UqUYOmSUEf/view?usp=sharing'
     }
 
     const preferences: Array<Preference> = [
@@ -114,12 +114,12 @@ export default component$(() => {
                     class="absolute left-[7px] top-[7px] h-[calc(100%-14px)] w-[calc(100%-14px)] rounded-full grayscale-[0.1] border-4 border-blue-gray-200 dark:border-emerald-400"
                 />
             </div>
-            <span class="top-[312px] left-0 z-20 flex w-full flex-col bg-auto p-3 text-center transition-all md:absolute md:text-left dark:bg-blue-gray-700 bg-white">
+            <span class="top-[312px] left-0 z-20 flex w-full flex-col bg-auto p-3 text-center transition-all md:absolute md:text-left dark:!bg-blue-gray-700 bg-white">
                 <span class="text-2xl font-semibold">Cezary Wrzesinski</span>
                 <span class="text-lg">{t('app.practice')}</span>
             </span>
             <div class="sticky top-0 left-0 flex flex-col gap-4">
-                <span class="z-10 mb-2 hidden h-[48.7px] items-center gap-2 border-b border-details bg-auto p-2 transition-all md:flex sticky top-0 bg-white dark:bg-blue-gray-700">
+                <span class="z-10 mb-2 hidden h-[48.7px] items-center gap-2 border-b border-details bg-auto p-2 transition-all md:flex sticky top-0 bg-[var(--primary)] border-b-gray-300">
                     <div class="relative  h-9 w-9 pointer-events-none">
                         <img
                             src="/images/my-photo.jpg"
@@ -139,7 +139,7 @@ export default component$(() => {
                     target="_blank"
                     rel="noreferrer nofollow"
                 >
-                    <button class="rounded-md border border-details bg-misc font-medium shadow-sm transition-all hover:bg-details w-full text-sm py-1 px-4">
+                    <button class="rounded-md border border-details bg-misc font-medium shadow-sm transition-all hover:bg-details w-full text-sm py-1 px-4 border-gray-200 cursor-pointer">
                         <strong>{t('app.cv-button-label')}</strong>
                     </button>
                 </a>
@@ -188,12 +188,12 @@ export default component$(() => {
                             <span
                                 class={
                                     'absolute -left-6 transition-all' +
-                                    sectionIsVisible
+                                        sectionIsVisible
                                         ? 'animation-visible'
                                         : ''
                                 }
                             >
-                                ➡️
+                                👉
                             </span>
                             <a
                                 key={contactUrl.url}
@@ -221,4 +221,4 @@ export default component$(() => {
 })
 
 const preferencesCommonClasses =
-    'transition-all !border-blue-gray-500 flex h-16 w-16 items-center justify-center rounded-full border-4 border-[#FEFEFE] p-1 shadow-inner drop-shadow-center-2xl overflow-hidden'
+    'transition-all !border-blue-gray-500 flex h-16 w-16 items-center justify-center rounded-full border-4 border-white p-1 shadow-inner drop-shadow-center-2xl overflow-hidden'

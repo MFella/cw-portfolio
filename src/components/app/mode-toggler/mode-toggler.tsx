@@ -1,7 +1,6 @@
 import {
     component$,
-    QwikMouseEvent,
-    Signal,
+    type Signal,
     useSignal,
     useTask$,
     useVisibleTask$,
@@ -22,7 +21,7 @@ export default component$(() => {
     const isDarkMode: Signal<boolean> = useSignal(false)
 
     const setMode = $(
-        ($event: QwikMouseEvent<HTMLInputElement, MouseEvent>) => {
+        ($event: MouseEvent) => {
             const mode: Mode = ($event.target as HTMLInputElement)?.checked
                 ? 'dark'
                 : 'default'
@@ -60,14 +59,14 @@ export default component$(() => {
                     ></path>
                 </svg>
             </div>
-            <label class="relative inline-flex items-center cursor-pointer mx-2">
+            <label class="relative inline-flex items-center !cursor-pointer mx-2">
                 <input
                     type="checkbox"
                     value=""
                     class="sr-only peer"
                     checked={isDarkMode.value}
                     onClick$={(
-                        $event: QwikMouseEvent<HTMLInputElement, MouseEvent>
+                        $event: MouseEvent
                     ) => setMode($event)}
                 />
                 <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[15px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>

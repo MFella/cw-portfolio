@@ -1,11 +1,11 @@
 import { component$ } from '@builder.io/qwik'
-import { useTranslate } from 'qwik-speak'
+import { inlineTranslate } from 'qwik-speak'
 import type { KnowledgeSection } from '~/components/shared/types/knowledgeSection'
 import type { WorkTileProps } from '~/components/shared/types/workTileProps'
 import Tile from '../tile/tile'
 
 export default component$(() => {
-    const t = useTranslate()
+    const t = inlineTranslate()
     const workTiles: Array<WorkTileProps> = [
         {
             mainImgSrc: '/images/here-icon.svg',
@@ -331,7 +331,7 @@ export default component$(() => {
                         <span class="text-sm font-semibold md:text-base">
                             {t('app.experience-title')}
                         </span>
-                        <span class="rounded-md border border-details bg-misc p-1 font-squada text-xs font-medium transition-all md:py-1 md:px-4 dark:bg-slate-500">
+                        <span class="rounded-md border border-details bg-misc p-1 font-squada text-xs font-medium transition-all md:py-1 md:px-4 dark:bg-slate-500 border-gray-200">
                             {t('app.practice')}
                         </span>
                     </h2>
@@ -420,7 +420,7 @@ export default component$(() => {
                                 <ul class="flex flex-wrap gap-1 pt-2">
                                     {section.items.map((item) => (
                                         <li key={item}>
-                                            <span class="flex !min-h-[44px] items-center gap-2 rounded-md border border-details py-1 px-2 text-sm bg-misc shadow-inner drop-shadow-center-2xl transition-all dark:bg-slate-500 dark:border-slate-700">
+                                            <span class="flex !min-h-[44px] items-center gap-2 rounded-md border border-details py-1 px-2 text-sm bg-misc shadow-inner drop-shadow-center-2xl transition-all dark:bg-slate-500 dark:border-slate-700 border-gray-300">
                                                 <span class="rounded-lg bg-misc p-1 transition-all flex justify-center items-center">
                                                     <img
                                                         class="w-6 h-6"

@@ -11,7 +11,7 @@
  *
  */
 import {
-    RenderOptions,
+    type RenderOptions,
     renderToStream,
     type RenderToStreamOptions,
 } from '@builder.io/qwik/server'

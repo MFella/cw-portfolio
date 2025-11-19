@@ -4,12 +4,12 @@ import {
     RouterOutlet,
     ServiceWorkerRegister,
 } from '@builder.io/qwik-city'
-import { QwikSpeakProvider } from 'qwik-speak'
 import { RouterHead } from './components/router-head/router-head'
 
 import './global.css'
 import { config } from './speak-config'
 import { translationFn } from './speak-functions'
+import { useQwikSpeak } from 'qwik-speak';
 
 export default component$(() => {
     /**
@@ -19,8 +19,8 @@ export default component$(() => {
      * Dont remove the `<head>` and `<body>` elements.
      */
 
+    useQwikSpeak({ config, translationFn });
     return (
-        <QwikSpeakProvider config={config} translationFn={translationFn}>
             <QwikCityProvider>
                 <head>
                     <meta charSet="utf-8" />
@@ -32,6 +32,5 @@ export default component$(() => {
                     <ServiceWorkerRegister />
                 </body>
             </QwikCityProvider>
-        </QwikSpeakProvider>
     )
 })

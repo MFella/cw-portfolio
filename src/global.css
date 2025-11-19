@@ -1,10 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 /**
  * Tailwind CSS imports
  * View the full documentation at https://tailwindcss.com
  */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@theme {
+    --color-blue-gray-100: #2c36471a;
+    --color-blue-gray-200: #2c364740;
+    --color-blue-gray-300: #2c364780;
+    --color-blue-gray-500: #2c3647b3;
+    --color-blue-gray-700: #2c3647;
+    --background: #fff;
+    --img-inverted: 0%;
+    --primary: #fff;
+    --font-display: "Lato", sans-serif; 
+}
+
+@layer theme {
+    .dark {
+        --img-inverted: 100%;
+        --primary: #2c3647;
+        --background: #2c3647;
+    }
+}
+
+:root {
+    --background: #fff;
+    --border: #2c364780;
+    --text: #000;
+}
+
+.dark {
+    --background: #2c3647;
+    --border: #fff;
+    --text: #fff;
+}
+
 
 ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -16,16 +51,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-t from-emerald-500 to-blue-gray-500;
+    @apply bg-gradient-to-t from-emerald-500 to-gray-500;
 }
 
 ::-webkit-scrollbar-track {
-    @apply bg-slate-400 dark:bg-white !important;
-}
-
-:root {
-    --blackalt: #2c3647;
-    --white: #f1f3f5;
+    @apply bg-slate-400 dark:bg-white;
 }
 
 .bg-misc {
@@ -42,6 +72,7 @@ html {
         'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
+    @apply !font-display;
 }
 
 body {
