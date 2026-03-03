@@ -51,7 +51,7 @@ export default component$(() => {
         polishUrl:
             'https://drive.google.com/file/d/1jl21BRe7JtsmODMOKoDvI3UqUYOmSUEf/view?usp=sharing',
         englishUrl:
-            'https://drive.google.com/file/d/1jl21BRe7JtsmODMOKoDvI3UqUYOmSUEf/view?usp=sharing'
+            'https://drive.google.com/file/d/1mlVzMt_JyxAsVD8uFhHRSeji5vLOceaA/view?usp=sharing'
     }
 
     const preferences: Array<Preference> = [
