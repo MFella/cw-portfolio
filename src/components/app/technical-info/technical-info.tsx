@@ -295,6 +295,10 @@ export default component$(() => {
             items: ['karma', 'jasmine', 'jest', 'cypress'],
         },
         {
+            title: 'knowledge-subsection-ai-prod-title',
+            items: ['gemini', 'claude', 'antigravity'],
+        },
+        {
             title: 'knowledge-subsection-ci-cd-title',
             items: ['gerrit', 'gitlab', 'jira', 'github'],
         },
@@ -311,7 +315,15 @@ export default component$(() => {
         },
         {
             title: 'knowledge-subsection-environment-tools-title',
-            items: ['eslint', 'stylelint', 'prettier', 'nx', 'docker', 'rxjs', 'grpc'],
+            items: [
+                'eslint',
+                'stylelint',
+                'prettier',
+                'nx',
+                'docker',
+                'rxjs',
+                'grpc',
+            ],
         },
         {
             title: 'knowledge-subsection-state-management-libraries-title',
@@ -319,7 +331,7 @@ export default component$(() => {
         },
         {
             title: 'knowledge-subsection-ide-title',
-            items: ['vscode', 'webstorm'],
+            items: ['vscode', 'webstorm', 'antigravity', 'zed'],
         },
     ]
 

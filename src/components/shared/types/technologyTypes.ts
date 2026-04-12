@@ -8,6 +8,7 @@ export type TechnologyTypes =
     | Design
     | IDE
     | StateManagementLibraries
+    | AIProductivity
 
 type FrontendFrameworks = 'angular' | 'react' | 'qwik'
 type FrontendUiLibraries = 'bootstrap' | 'tailwind' | 'material-ui' | 'primeng'
@@ -51,5 +52,6 @@ type Databases =
     | 'prisma'
     | 'Postgresql'
 type Design = 'figma'
-type IDE = 'vscode' | 'webstorm'
+type IDE = 'vscode' | 'webstorm' | 'antigravity' | 'zed'
 type StateManagementLibraries = 'ngrx'
+type AIProductivity = 'claude' | 'gemini'

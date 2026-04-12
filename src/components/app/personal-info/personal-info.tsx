@@ -4,7 +4,7 @@ import {
     useVisibleTask$,
     useStylesScoped$,
 } from '@builder.io/qwik'
-import { inlineTranslate } from 'qwik-speak';
+import { inlineTranslate } from 'qwik-speak'
 import type { TechnologyTypes } from '~/components/shared/types/technologyTypes'
 import styles from './personal-info.css?inline'
 
@@ -27,31 +27,31 @@ export default component$(() => {
         displayUrl: string
         imageClasses: Array<string>
     }> = [
-            {
-                url: 'mailto:cezary.wrzesinski.dev@gmail.com',
-                icon: 'gmail',
-                displayUrl: 'cezary.wrzesinski.dev@gmail.com',
-                imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
-            },
-            {
-                url: 'https://www.linkedin.com/in/czarek-wrzesinski-dev/',
-                icon: 'linkedin',
-                displayUrl: 'linkedin.com',
-                imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
-            },
-            {
-                url: 'https://github.com/MFella',
-                icon: 'github',
-                displayUrl: 'github.com',
-                imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
-            },
-        ]
+        {
+            url: 'mailto:cezary.wrzesinski.dev@gmail.com',
+            icon: 'gmail',
+            displayUrl: 'cezary.wrzesinski.dev@gmail.com',
+            imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
+        },
+        {
+            url: 'https://www.linkedin.com/in/czarek-wrzesinski-dev/',
+            icon: 'linkedin',
+            displayUrl: 'linkedin.com',
+            imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
+        },
+        {
+            url: 'https://github.com/MFella',
+            icon: 'github',
+            displayUrl: 'github.com',
+            imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
+        },
+    ]
 
     const cvUrls: { englishUrl: string; polishUrl: string } = {
         polishUrl:
-            'https://drive.google.com/file/d/1jl21BRe7JtsmODMOKoDvI3UqUYOmSUEf/view?usp=sharing',
+            'https://drive.google.com/file/d/1D-feXEm4Gu0DjygT_4da__oiBTAk_0i3/view?usp=sharing',
         englishUrl:
-            'https://drive.google.com/file/d/1mlVzMt_JyxAsVD8uFhHRSeji5vLOceaA/view?usp=sharing'
+            'https://drive.google.com/file/d/1CSFvckQ9pUYPzLXieK9KuwYqnwERhN5A/view?usp=sharing',
     }
 
     const preferences: Array<Preference> = [
@@ -188,7 +188,7 @@ export default component$(() => {
                             <span
                                 class={
                                     'absolute -left-6 transition-all' +
-                                        sectionIsVisible
+                                    sectionIsVisible
                                         ? 'animation-visible'
                                         : ''
                                 }
