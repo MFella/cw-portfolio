@@ -11,6 +11,7 @@ export type WorkTileProps = {
     id: string
     actionLinks: Array<ActionLinkProps>
     role?: string
+    tag?: string
 }
 
 type ActionLinkProps = {

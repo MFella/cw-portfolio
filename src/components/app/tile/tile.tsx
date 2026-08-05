@@ -43,42 +43,45 @@ export default component$((props: WorkTileProps) => {
 
     return (
         <li class={tileClasses}>
-            <div class="flex flex-col justify-between gap-3 w-full">
-                <div class="flex items-center justify-between gap-2">
-                    <div class="flex items-center justify-center">
-                        <img
-                            src={props.mainImgSrc}
-                            alt="Company logo"
-                            class={
-                                'w-8 h-8 box-content p-1 border-2 rounded-lg dark:bg-slate-400 transition-all border-gray-300 ' +
-                                props.mainImgClasses.join(' ')
-                            }
-                        />
-                        <div class="flex flex-col gap-1 pl-2">
-                            <p class="flex gap-4 align-baseline font-squada text-sm font-bold">
-                                {t(props.title)}
-                            </p>
-                            {props.role && (
-                                <small class="italic">{t(props.role)}</small>
-                            )}
-                        </div>
+            <div class="flex w-full flex-col gap-3">
+                {props.tag && <span class="tag">{props.tag}</span>}
+                <div class="flex items-center gap-2">
+                    <img
+                        src={props.mainImgSrc}
+                        alt="Logo"
+                        width="32"
+                        height="32"
+                        class={
+                            'h-8 w-8 shrink-0 rounded-[calc(var(--bp-radius)-4px)] border border-[var(--bp-border)] bg-[var(--bp-panel-2)] p-1 box-content ' +
+                            props.mainImgClasses.join(' ')
+                        }
+                    />
+                    <div class="flex flex-col gap-1 pl-2">
+                        <p class="font-heading text-sm font-bold text-[var(--bp-ink)]">
+                            {t(props.title)}
+                        </p>
+                        {props.role && (
+                            <small class="italic text-[var(--bp-muted)]">
+                                {t(props.role)}
+                            </small>
+                        )}
                     </div>
                 </div>
-                <ul class="description-list flex flex-col gap-1 pl-1">
+                <ul class="flex flex-col gap-1.5">
                     {props.descriptions?.map((description) => (
-                        <li
-                            key={description}
-                            class="flex text-sm before:content-[''] before:bg-emerald-500 before:absolute before:w-1 before:h-1 before:mr-1 before:mt-2"
-                        >
-                            <h3 class="pl-3">{t(description)}</h3>
+                        <li key={description} class="flex items-start gap-2">
+                            <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--bp-accent)]" />
+                            <span class="text-sm text-[var(--bp-ink)]">
+                                {t(description)}
+                            </span>
                         </li>
                     ))}
                 </ul>
-                <div class="flex flex-wrap gap-4 justify-center">
+                <div class="flex flex-wrap gap-2">
                     {props.technologies.map((technology: string) => (
                         <span
                             key={technology}
-                            class="rounded-md p-1 transition-all flex justify-center items-center dark:bg-white"
+                            class="flex items-center justify-center rounded-[calc(var(--bp-radius)-4px)] border border-[var(--bp-border)] bg-[var(--bp-panel-2)] p-1.5"
                         >
                             <img
                                 src={'/images/' + technology + '-icon.svg'}
@@ -90,57 +93,55 @@ export default component$((props: WorkTileProps) => {
                                     technology[0].toUpperCase() +
                                     technology.slice(1)
                                 }
-                                width="24"
-                                height="24"
+                                width="20"
+                                height="20"
                             />
                         </span>
                     ))}
                 </div>
-                <div class="flex items-center justify-around gap-x-6">
-                    {props?.actionLinks.map((link) => (
-                        <a
-                            key={link.anchorUrl}
-                            href={link.anchorUrl}
-                            target="_blank"
-                            class={"flex opacity-90 hover:opacity-100 items-center rounded-md bg-gradient-to-r bg-emerald-300 hover:bg-emerald-400 dark:bg-purple-500 dark:hover:bg-purple-600 text-gray-700 dark:text-white px-3 py-2 text-sm font-semibold shadow-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 " + link.extraClass }
-                        >
-                            <img
-                                src={link.iconUrl}
-                                alt={link.iconName}
-                                class="w-5 h-5 dark:invert"
-                            />
-                            <span class="pl-2">{t(link.label)}</span>
-                        </a>
-                    ))}
-                </div>
+                {props?.actionLinks.length > 0 && (
+                    <div class="flex flex-wrap items-center gap-3">
+                        {props.actionLinks.map((link) => (
+                            <a
+                                key={link.anchorUrl}
+                                href={link.anchorUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                class={'stamp ' + (link.extraClass ?? '')}
+                            >
+                                <img
+                                    src={link.iconUrl}
+                                    alt={link.iconName}
+                                    width="16"
+                                    height="16"
+                                    class="h-4 w-4 invert-[var(--img-inverted)]"
+                                />
+                                {t(link.label)}
+                            </a>
+                        ))}
+                    </div>
+                )}
                 {elapsedTime.value?.trim() !== '-' && (
-                    <span class="flex items-center justify-center rounded-full border border-details px-2 py-1 text-xs border-gray-300">
-                        <strong>
-                            {fd(
-                                props.startDate,
-                                {
-                                    dateStyle: 'medium',
-                                },
-                                speakLocale.lang
-                            )}
-                        </strong>
-                        <b class="px-1"> &rarr;</b>
-                        <strong>
-                            {isActivityStillInProgress()
-                                ? t(
-                                      'app.activity-in-progress-suffix',
-                                      {},
-                                      speakLocale.lang
-                                  )
-                                : fd(
-                                      props.endDate,
-                                      {
-                                          dateStyle: 'medium',
-                                      },
-                                      speakLocale.lang
-                                  )}
-                        </strong>
-                        <strong></strong>
+                    <span class="mt-1 inline-flex w-fit items-center gap-1 rounded-full border border-[var(--bp-border)] px-2 py-1 font-mono text-xs text-[var(--bp-muted)]">
+                        {fd(
+                            props.startDate,
+                            { dateStyle: 'medium' },
+                            speakLocale.lang
+                        )}
+                        <span class="text-[var(--bp-accent-text)]">
+                            &rarr;
+                        </span>
+                        {isActivityStillInProgress()
+                            ? t(
+                                  'app.activity-in-progress-suffix',
+                                  {},
+                                  speakLocale.lang
+                              )
+                            : fd(
+                                  props.endDate,
+                                  { dateStyle: 'medium' },
+                                  speakLocale.lang
+                              )}
                     </span>
                 )}
             </div>
@@ -148,5 +149,4 @@ export default component$((props: WorkTileProps) => {
     )
 })
 
-const tileClasses =
-    'flex w-full gap-12 rounded-md border border-details bg-misc p-4 shadow-sm transition-all lg:w-[calc(50%-12px)] border-gray-300 dark:border-transparent'
+const tileClasses = 'card flex h-full w-full flex-col'

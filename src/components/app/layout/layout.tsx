@@ -5,17 +5,30 @@ import TechnicalInfo from '../technical-info/technical-info'
 
 export default component$(() => {
     return (
-        <div class={classes}>
-            <div class="relative flex w-full flex-col gap-4 px-2 mb-0 md:w-min md:p-3 md:px-4">
+        <div class="sheet container mx-auto max-w-[1280px]">
+            <span class="tick tl" />
+            <span class="tick tr" />
+            <span class="tick bl" />
+            <span class="tick br" />
+            <Header />
+            <div class="flex flex-col gap-10 py-8">
                 <PersonalInfo />
-            </div>
-            <div class="flex flex-col gap-6 w-full">
-                <Header />
                 <TechnicalInfo />
+            </div>
+            <div class="titleblock px-4">
+                <span>
+                    DWG NO. <b>CW-001</b>
+                </span>
+                <span>
+                    REV <b>2026.08</b>
+                </span>
+                <span>
+                    SCALE <b>NTS</b>
+                </span>
+                <span>
+                    DRAWN <b>C. WRZESINSKI</b>
+                </span>
             </div>
         </div>
     )
 })
-
-const classes =
-    'container mx-auto flex w-full max-w-[1280px] flex-col pt-5 md:flex-row md:px-6 md:pt-24 bg-auto pb-5'

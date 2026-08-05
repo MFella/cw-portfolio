@@ -20,5 +20,4 @@ export const head: DocumentHead = {
     ],
 }
 
-const classes: string =
-    'w-full text-font transition-all dark:text-white dark:bg-blue-gray-700'
+const classes: string = 'w-full'

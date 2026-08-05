@@ -24,6 +24,9 @@ export default component$(() => {
             <QwikCityProvider>
                 <head>
                     <meta charSet="utf-8" />
+                    <script
+                        dangerouslySetInnerHTML={`try{if(localStorage.getItem('mode')==='dark'){document.documentElement.classList.add('dark')}}catch(e){}`}
+                    />
                     <link rel="manifest" href="/manifest.json" />
                     <RouterHead />
                 </head>
