@@ -8,15 +8,15 @@ export default component$(() => {
     const t = inlineTranslate()
     const workTiles: Array<WorkTileProps> = [
         {
-            mainImgSrc: '/images/here-icon.svg',
+            mainImgSrc: '/images/classified-icon.jfif',
             mainImgClasses: [],
-            title: 'app.work-here-title',
+            title: 'app.work-classified-1-title',
             startDate: new Date(2025, 1, 17, 12),
             endDate: new Date(),
             descriptions: [
-                'app.work-here-description-0',
-                'app.work-here-description-1',
-                'app.work-here-description-2',
+                'app.work-classified-1-description-0',
+                'app.work-classified-1-description-1',
+                'app.work-classified-1-description-2',
             ],
             technologies: [
                 'typescript',
@@ -33,7 +33,7 @@ export default component$(() => {
             ],
             id: Number(Math.random()).toString(32),
             actionLinks: [],
-            role: 'app.work-here-role',
+            role: 'app.work-classified-1-role',
         },
         {
             mainImgSrc: '/images/rockwell-icon.svg',
