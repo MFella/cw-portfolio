@@ -337,129 +337,123 @@ export default component$(() => {
 
     return (
         <>
-            <div class="md:scroll-m-16 px-4">
-                <div>
-                    <h2 class="mb-3 flex items-baseline gap-6 sm:gap-4">
-                        <span class="text-sm font-semibold md:text-base">
-                            {t('app.experience-title')}
-                        </span>
-                        <span class="rounded-md border border-details bg-misc p-1 font-squada text-xs font-medium transition-all md:py-1 md:px-4 dark:bg-slate-500 border-gray-200">
-                            {t('app.practice')}
-                        </span>
+            <div class="scroll-m-16 px-4">
+                <div class="mb-5 flex items-center gap-3">
+                    <span class="eyebrow">02</span>
+                    <h2 class="font-heading text-sm font-bold uppercase tracking-wide text-[var(--bp-ink)] md:text-base">
+                        {t('app.experience-title')}
                     </h2>
-                    <ul class="flex flex-wrap gap-6">
-                        {workTiles.map((item) => (
-                            <Tile
-                                key={item.id}
-                                mainImgSrc={item.mainImgSrc}
-                                mainImgClasses={item.mainImgClasses}
-                                title={item.title}
-                                startDate={item.startDate}
-                                endDate={item.endDate}
-                                descriptions={item.descriptions}
-                                technologies={item.technologies}
-                                id={item.id}
-                                actionLinks={item.actionLinks}
-                                role={item.role}
-                            />
-                        ))}
-                    </ul>
+                    <span class="h-px flex-1 bg-[var(--bp-border)]" />
                 </div>
+                <ul class="bento-grid">
+                    {workTiles.map((item, i) => (
+                        <Tile
+                            key={item.id}
+                            mainImgSrc={item.mainImgSrc}
+                            mainImgClasses={item.mainImgClasses}
+                            title={item.title}
+                            startDate={item.startDate}
+                            endDate={item.endDate}
+                            descriptions={item.descriptions}
+                            technologies={item.technologies}
+                            id={item.id}
+                            actionLinks={item.actionLinks}
+                            role={item.role}
+                            tag={`NODE_${String(i + 1).padStart(2, '0')}`}
+                        />
+                    ))}
+                </ul>
             </div>
-            <div class="md:scroll-m-16 px-4">
-                <div>
-                    <h2 class="mb-3 flex items-baseline gap-6 sm:gap-4">
-                        <span class="text-sm font-semibold md:text-base">
-                            {t('app.education-section-title')}
-                        </span>
+            <div class="scroll-m-16 px-4">
+                <div class="mb-5 flex items-center gap-3">
+                    <span class="eyebrow">03</span>
+                    <h2 class="font-heading text-sm font-bold uppercase tracking-wide text-[var(--bp-ink)] md:text-base">
+                        {t('app.education-section-title')}
                     </h2>
-                    <ul class="flex flex-wrap gap-6">
-                        {educationTiles.map((item) => (
-                            <Tile
-                                key={item.id}
-                                mainImgSrc={item.mainImgSrc}
-                                mainImgClasses={item.mainImgClasses}
-                                title={item.title}
-                                startDate={item.startDate}
-                                endDate={item.endDate}
-                                descriptions={item.descriptions}
-                                technologies={[]}
-                                id={item.id}
-                                actionLinks={item.actionLinks}
-                            />
-                        ))}
-                    </ul>
+                    <span class="h-px flex-1 bg-[var(--bp-border)]" />
                 </div>
+                <ul class="bento-grid">
+                    {educationTiles.map((item, i) => (
+                        <Tile
+                            key={item.id}
+                            mainImgSrc={item.mainImgSrc}
+                            mainImgClasses={item.mainImgClasses}
+                            title={item.title}
+                            startDate={item.startDate}
+                            endDate={item.endDate}
+                            descriptions={item.descriptions}
+                            technologies={[]}
+                            id={item.id}
+                            actionLinks={item.actionLinks}
+                            tag={`EDU_${String(i + 1).padStart(2, '0')}`}
+                        />
+                    ))}
+                </ul>
             </div>
-            <div class="md:scroll-m-16 px-4">
-                <div>
-                    <h2 class="mb-3 flex items-baseline gap-6 sm:gap-4">
-                        <span class="text-sm font-semibold md:text-base">
-                            {t('app.project-section-title')}
-                        </span>
+            <div class="scroll-m-16 px-4">
+                <div class="mb-5 flex items-center gap-3">
+                    <span class="eyebrow">04</span>
+                    <h2 class="font-heading text-sm font-bold uppercase tracking-wide text-[var(--bp-ink)] md:text-base">
+                        {t('app.project-section-title')}
                     </h2>
-                    <ul class="flex flex-wrap gap-6">
-                        {projectTiles.map((item) => (
-                            <Tile
-                                key={item.id}
-                                mainImgSrc={item.mainImgSrc}
-                                mainImgClasses={item.mainImgClasses}
-                                title={item.title}
-                                startDate={new Date()}
-                                endDate={new Date()}
-                                descriptions={item.descriptions}
-                                technologies={item.technologies}
-                                id={item.id}
-                                actionLinks={item.actionLinks}
-                            />
-                        ))}
-                    </ul>
+                    <span class="h-px flex-1 bg-[var(--bp-border)]" />
                 </div>
+                <ul class="bento-grid">
+                    {projectTiles.map((item, i) => (
+                        <Tile
+                            key={item.id}
+                            mainImgSrc={item.mainImgSrc}
+                            mainImgClasses={item.mainImgClasses}
+                            title={item.title}
+                            startDate={new Date()}
+                            endDate={new Date()}
+                            descriptions={item.descriptions}
+                            technologies={item.technologies}
+                            id={item.id}
+                            actionLinks={item.actionLinks}
+                            tag={`PROJECT_${String(i + 1).padStart(2, '0')}`}
+                        />
+                    ))}
+                </ul>
             </div>
-            <div class="md:scroll-m-16 px-4">
-                <div>
-                    <h2 class="mb-3 text-sm font-semibold md:text-base">
+            <div class="scroll-m-16 px-4">
+                <div class="mb-5 flex items-center gap-3">
+                    <span class="eyebrow">05</span>
+                    <h2 class="font-heading text-sm font-bold uppercase tracking-wide text-[var(--bp-ink)] md:text-base">
                         {t('app.knowledge-section-title')}
                     </h2>
-                    <ul class="flex flex-col gap-6 pl-1">
-                        {knowledgeSections.map((section) => (
-                            <li key={section.title}>
-                                <h3 class="list-disc-custom flex text-sm before:content-[''] before:bg-emerald-500 before:absolute before:w-1 before:h-1 before:mr-1 before:mt-2">
-                                    <strong class="pl-3">
-                                        {t('app.' + section.title)}
-                                    </strong>
-                                </h3>
-                                <ul class="flex flex-wrap gap-1 pt-2">
-                                    {section.items.map((item) => (
-                                        <li key={item}>
-                                            <span class="flex !min-h-[44px] items-center gap-2 rounded-md border border-details py-1 px-2 text-sm bg-misc shadow-inner drop-shadow-center-2xl transition-all dark:bg-slate-500 dark:border-slate-700 border-gray-300">
-                                                <span class="rounded-lg bg-misc p-1 transition-all flex justify-center items-center">
-                                                    <img
-                                                        class="w-6 h-6"
-                                                        src={
-                                                            '/images/' +
-                                                            item +
-                                                            '-icon.svg'
-                                                        }
-                                                        alt=""
-                                                    />
-                                                </span>
-                                                <span>
-                                                    {item
-                                                        .charAt(0)
-                                                        .toUpperCase() +
-                                                        item
-                                                            .slice(1)
-                                                            .toLowerCase()}
-                                                </span>
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </li>
-                        ))}
-                    </ul>
+                    <span class="h-px flex-1 bg-[var(--bp-border)]" />
                 </div>
+                <ul class="flex flex-col gap-4">
+                    {knowledgeSections.map((section) => (
+                        <li key={section.title} class="card">
+                            <h3 class="eyebrow mb-3">
+                                {t('app.' + section.title)}
+                            </h3>
+                            <ul class="flex flex-wrap gap-2">
+                                {section.items.map((item) => (
+                                    <li key={item}>
+                                        <span class="chip">
+                                            <img
+                                                class="h-5 w-5"
+                                                width="20"
+                                                height="20"
+                                                src={
+                                                    '/images/' +
+                                                    item +
+                                                    '-icon.svg'
+                                                }
+                                                alt=""
+                                            />
+                                            {item.charAt(0).toUpperCase() +
+                                                item.slice(1).toLowerCase()}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </>
     )

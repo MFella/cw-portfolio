@@ -1,49 +1,30 @@
-import {
-    component$,
-    useSignal,
-    useVisibleTask$,
-    useStylesScoped$,
-} from '@builder.io/qwik'
+import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
 import { inlineTranslate } from 'qwik-speak'
 import type { TechnologyTypes } from '~/components/shared/types/technologyTypes'
-import styles from './personal-info.css?inline'
-
-type Preference = {
-    technologyType: TechnologyTypes
-    extraClasses: Array<string>
-}
 
 export default component$(() => {
-    useStylesScoped$(styles)
     const t = inlineTranslate()
     const cvButtonUrl = useSignal<string>('')
-
-    const sectionRef = useSignal<Element>()
-    const sectionIsVisible = useSignal<boolean>(true)
 
     const contactUrlList: Array<{
         url: string
         icon: 'gmail' | 'linkedin' | 'github'
         displayUrl: string
-        imageClasses: Array<string>
     }> = [
         {
             url: 'mailto:cezary.wrzesinski.dev@gmail.com',
             icon: 'gmail',
             displayUrl: 'cezary.wrzesinski.dev@gmail.com',
-            imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
         },
         {
             url: 'https://www.linkedin.com/in/czarek-wrzesinski-dev/',
             icon: 'linkedin',
             displayUrl: 'linkedin.com',
-            imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
         },
         {
             url: 'https://github.com/MFella',
             icon: 'github',
             displayUrl: 'github.com',
-            imageClasses: ['w-5', 'h-5', 'invert-[var(--img-inverted)]'],
         },
     ]
 
@@ -54,39 +35,15 @@ export default component$(() => {
             'https://drive.google.com/file/d/1CSFvckQ9pUYPzLXieK9KuwYqnwERhN5A/view?usp=sharing',
     }
 
-    const preferences: Array<Preference> = [
-        {
-            technologyType: 'nestjs',
-            extraClasses: ['bg-emerald-300', 'dark:bg-red-300'],
-        },
-        {
-            technologyType: 'node',
-            extraClasses: ['bg-teal-500 dark:bg-lime-200'],
-        },
-        {
-            technologyType: 'typescript',
-            extraClasses: ['dark:bg-blue-200', 'bg-yellow-100'],
-        },
-        {
-            technologyType: 'angular',
-            extraClasses: ['bg-emerald-300', 'dark:bg-pink-300'],
-        },
-        {
-            technologyType: 'material-ui',
-            extraClasses: ['dark:bg-amber-200 ', 'bg-cyan-200'],
-        },
-        {
-            technologyType: 'tailwind',
-            extraClasses: ['dark:bg-sky-200', 'bg-indigo-200'],
-        },
-        {
-            technologyType: 'mongodb',
-            extraClasses: ['dark:bg-slate-300', 'bg-fuchsia-200'],
-        },
-        {
-            technologyType: 'git',
-            extraClasses: ['dark:bg-orange-200', 'bg-stone-300'],
-        },
+    const preferences: Array<TechnologyTypes> = [
+        'nestjs',
+        'node',
+        'typescript',
+        'angular',
+        'material-ui',
+        'tailwind',
+        'mongodb',
+        'git',
     ]
 
     useVisibleTask$(async () => {
@@ -106,119 +63,94 @@ export default component$(() => {
     })
 
     return (
-        <div class="relative mb-12 flex w-full flex-col gap-4 px-2 md:mb-0 md:w-min md:p-3 md:px-4 h-full">
-            <div class="relative mx-auto overflow-hidden w-72 h-72 md:w-[296px] md:h-[296px] pointer-events-none">
-                <img
-                    loading="lazy"
-                    src="/images/my-photo.jpg"
-                    class="absolute left-[7px] top-[7px] h-[calc(100%-14px)] w-[calc(100%-14px)] rounded-full grayscale-[0.1] border-4 border-blue-gray-200 dark:border-emerald-400"
-                />
-            </div>
-            <span class="top-[312px] left-0 z-20 flex w-full flex-col bg-auto p-3 text-center transition-all md:absolute md:text-left dark:!bg-blue-gray-700 bg-white">
-                <span class="text-2xl font-semibold">Cezary Wrzesinski</span>
-                <span class="text-lg">{t('app.practice')}</span>
-            </span>
-            <div class="sticky top-0 left-0 flex flex-col gap-4">
-                <span class="z-10 mb-2 hidden h-[48.7px] items-center gap-2 border-b border-details bg-auto p-2 transition-all md:flex sticky top-0 bg-[var(--primary)] border-b-gray-300">
-                    <div class="relative  h-9 w-9 pointer-events-none">
-                        <img
-                            src="/images/my-photo.jpg"
-                            alt="Photo"
-                            class="absolute inset-0.5 h-8 w-8 rounded-full border-2 border-blue-gray-200 dark:border-emerald-400"
-                        />
-                    </div>
-                    <span class="flex items-baseline gap-2 text-xs">
-                        <span class="text-sm font-semibold">
-                            Cezary Wrzesinski
-                        </span>
-                        <small>{t('app.practice')}</small>
-                    </span>
-                </span>
-                <a
-                    href={cvButtonUrl.value}
-                    target="_blank"
-                    rel="noreferrer nofollow"
-                >
-                    <button class="rounded-md border border-details bg-misc font-medium shadow-sm transition-all hover:bg-details w-full text-sm py-1 px-4 border-gray-200 cursor-pointer">
-                        <strong>{t('app.cv-button-label')}</strong>
-                    </button>
-                </a>
-                <span class="flex flex-wrap justify-center text-center md:justify-start md:text-left">
-                    <strong>&#128187;{t('app.bio-job-title')}</strong>
-                    <p class="pl-1 mt-3 italic leading-5">
-                        {t('app.bio-description')}
-                    </p>
-                </span>
-                <div class="flex flex-col items-center gap-2 bg-auto transition-all md:items-start">
-                    <span class="font-semibold">
-                        {t('app.bio-preferences')}
-                    </span>
-                    <div class="flex w-80 flex-wrap justify-center gap-2 md:w-full">
-                        {preferences.map((preference) => (
-                            <span
-                                key={preference.technologyType}
-                                class={
-                                    preferencesCommonClasses +
-                                    ' ' +
-                                    preference.extraClasses.join(' ')
-                                }
-                            >
-                                <img
-                                    src={
-                                        '/images/' +
-                                        preference.technologyType +
-                                        '-icon.svg'
-                                    }
-                                    alt={preference.technologyType}
-                                    width="49"
-                                    height="49"
-                                />
-                            </span>
-                        ))}
-                    </div>
+        <div class="flex flex-col gap-8 px-4 pb-8 pt-8">
+            <div class="flex flex-wrap items-end gap-6">
+                <div class="h-28 w-28 shrink-0 rounded-[var(--bp-radius)] border border-[var(--bp-border)] p-1.5">
+                    <img
+                        src="/images/my-photo.jpg"
+                        alt="Cezary Wrzesinski"
+                        class="h-full w-full rounded-[calc(var(--bp-radius)-6px)] object-cover grayscale-[0.15]"
+                    />
                 </div>
-                <div class="flex flex-col items-center gap-2 md:items-start">
-                    <span class="font-semibold">{t('app.bio-contact')}</span>
-                    {contactUrlList.map((contactUrl) => (
-                        <div
-                            ref={sectionRef}
-                            class="flex items-center justify-center items-center gap-2"
-                            key={contactUrl.url}
+                <div class="min-w-[260px] flex-1">
+                    <h1 class="font-heading text-4xl font-extrabold uppercase leading-[0.98] tracking-wide text-[var(--bp-ink)] sm:text-5xl">
+                        Cezary
+                        <br />
+                        Wrzesinski
+                    </h1>
+                    <p class="mt-3 flex flex-wrap items-center gap-2 text-sm text-[var(--bp-muted)]">
+                        <strong class="font-heading text-[var(--bp-ink)]">
+                            {t('app.bio-job-title')}
+                        </strong>
+                        <span>&middot;</span>
+                        <span>{t('app.practice')}</span>
+                    </p>
+                </div>
+            </div>
+
+            <p class="max-w-[62ch] text-sm italic leading-6 text-[var(--bp-muted)]">
+                {t('app.bio-description')}
+            </p>
+
+            <a
+                href={cvButtonUrl.value}
+                target="_blank"
+                rel="noreferrer nofollow"
+                class="stamp w-fit"
+            >
+                {t('app.cv-button-label')}
+            </a>
+
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-3">
+                    <span class="eyebrow">01</span>
+                    <h2 class="font-heading text-sm font-bold uppercase tracking-wide text-[var(--bp-ink)] md:text-base">
+                        {t('app.bio-preferences')}
+                    </h2>
+                    <span class="h-px flex-1 bg-[var(--bp-border)]" />
+                </div>
+                <div class="bento-grid bento-grid--chips">
+                    {preferences.map((technologyType) => (
+                        <span
+                            key={technologyType}
+                            class="chip justify-center"
                         >
-                            <span
-                                class={
-                                    'absolute -left-6 transition-all' +
-                                    sectionIsVisible
-                                        ? 'animation-visible'
-                                        : ''
+                            <img
+                                src={'/images/' + technologyType + '-icon.svg'}
+                                alt={technologyType}
+                                width="20"
+                                height="20"
+                            />
+                            {technologyType}
+                        </span>
+                    ))}
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <span class="eyebrow">{t('app.bio-contact')}</span>
+                <div class="flex flex-wrap gap-3">
+                    {contactUrlList.map((contactUrl) => (
+                        <a
+                            key={contactUrl.url}
+                            target="_blank"
+                            href={contactUrl.url}
+                            class="chip"
+                        >
+                            <img
+                                src={
+                                    '/images/' + contactUrl.icon + '-icon.svg'
                                 }
-                            >
-                                👉
-                            </span>
-                            <a
-                                key={contactUrl.url}
-                                target="_blank"
-                                href={contactUrl.url}
-                                class="flex select-all items-center gap-2 text-sm pt-2 pb-1 transition-all"
-                            >
-                                <img
-                                    class={contactUrl.imageClasses.join(' ')}
-                                    src={
-                                        '/images/' +
-                                        contactUrl.icon +
-                                        '-icon.svg'
-                                    }
-                                    alt=""
-                                />
-                                <span>{contactUrl.displayUrl}</span>
-                            </a>
-                        </div>
+                                alt=""
+                                width="16"
+                                height="16"
+                                class="h-4 w-4 invert-[var(--img-inverted)]"
+                            />
+                            {contactUrl.displayUrl}
+                        </a>
                     ))}
                 </div>
             </div>
         </div>
     )
 })
-
-const preferencesCommonClasses =
-    'transition-all !border-blue-gray-500 flex h-16 w-16 items-center justify-center rounded-full border-4 border-white p-1 shadow-inner drop-shadow-center-2xl overflow-hidden'
