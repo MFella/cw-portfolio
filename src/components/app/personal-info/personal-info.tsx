@@ -1,10 +1,9 @@
-import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
+import { component$ } from '@builder.io/qwik'
 import { inlineTranslate } from 'qwik-speak'
 import type { TechnologyTypes } from '~/components/shared/types/technologyTypes'
 
 export default component$(() => {
     const t = inlineTranslate()
-    const cvButtonUrl = useSignal<string>('')
 
     const contactUrlList: Array<{
         url: string
@@ -28,13 +27,6 @@ export default component$(() => {
         },
     ]
 
-    const cvUrls: { englishUrl: string; polishUrl: string } = {
-        polishUrl:
-            'https://drive.google.com/file/d/1D-feXEm4Gu0DjygT_4da__oiBTAk_0i3/view?usp=sharing',
-        englishUrl:
-            'https://drive.google.com/file/d/1CSFvckQ9pUYPzLXieK9KuwYqnwERhN5A/view?usp=sharing',
-    }
-
     const preferences: Array<TechnologyTypes> = [
         'nestjs',
         'node',
@@ -46,26 +38,10 @@ export default component$(() => {
         'git',
     ]
 
-    useVisibleTask$(async () => {
-        const result = new RegExp(
-            '(?:^|; )' + encodeURIComponent('locale') + '=([^;]*)'
-        ).exec(document.cookie)
-        if (!result) {
-            cvButtonUrl.value = cvUrls.polishUrl
-
-            return
-        }
-
-        cvButtonUrl.value =
-            JSON.parse(result[1])['lang'] === 'pl-PL'
-                ? cvUrls.polishUrl
-                : cvUrls.englishUrl
-    })
-
     return (
         <div class="flex flex-col gap-8 px-4 pb-8 pt-8">
-            <div class="flex flex-wrap items-end gap-6">
-                <div class="h-28 w-28 shrink-0 rounded-[var(--bp-radius)] border border-[var(--bp-border)] p-1.5">
+            <div class="flex flex-wrap items-center gap-6">
+                <div class="h-28 w-28 shrink-0 rounded-[var(--bp-radius)] border border-[var(--bp-border)] p-1.5 md:h-40 md:w-40 lg:h-48 lg:w-48">
                     <img
                         src="/images/my-photo.jpg"
                         alt="Cezary Wrzesinski"
@@ -88,18 +64,34 @@ export default component$(() => {
                 </div>
             </div>
 
-            <p class="max-w-[62ch] text-sm italic leading-6 text-[var(--bp-muted)]">
+            <p class="max-w-[62ch] text-sm italic leading-6 text-[var(--bp-muted)] md:text-base md:leading-7 lg:text-lg lg:leading-8">
                 {t('app.bio-description')}
             </p>
 
-            <a
-                href={cvButtonUrl.value}
-                target="_blank"
-                rel="noreferrer nofollow"
-                class="stamp w-fit"
-            >
-                {t('app.cv-button-label')}
-            </a>
+            <div class="flex flex-col gap-3">
+                <span class="eyebrow">{t('app.bio-contact')}</span>
+                <div class="flex flex-wrap gap-3">
+                    {contactUrlList.map((contactUrl) => (
+                        <a
+                            key={contactUrl.url}
+                            target="_blank"
+                            href={contactUrl.url}
+                            class="chip"
+                        >
+                            <img
+                                src={
+                                    '/images/' + contactUrl.icon + '-icon.svg'
+                                }
+                                alt=""
+                                width="16"
+                                height="16"
+                                class="h-4 w-4 invert-[var(--img-inverted)]"
+                            />
+                            {contactUrl.displayUrl}
+                        </a>
+                    ))}
+                </div>
+            </div>
 
             <div class="flex flex-col gap-3">
                 <div class="flex items-center gap-3">
@@ -123,31 +115,6 @@ export default component$(() => {
                             />
                             {technologyType}
                         </span>
-                    ))}
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-3">
-                <span class="eyebrow">{t('app.bio-contact')}</span>
-                <div class="flex flex-wrap gap-3">
-                    {contactUrlList.map((contactUrl) => (
-                        <a
-                            key={contactUrl.url}
-                            target="_blank"
-                            href={contactUrl.url}
-                            class="chip"
-                        >
-                            <img
-                                src={
-                                    '/images/' + contactUrl.icon + '-icon.svg'
-                                }
-                                alt=""
-                                width="16"
-                                height="16"
-                                class="h-4 w-4 invert-[var(--img-inverted)]"
-                            />
-                            {contactUrl.displayUrl}
-                        </a>
                     ))}
                 </div>
             </div>
