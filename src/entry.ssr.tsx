@@ -18,22 +18,11 @@ import {
 import { manifest } from '@qwik-client-manifest'
 import { isDev } from '@builder.io/qwik/build'
 import Root from './root'
-import { config } from './speak-config'
-
-function getAppropriateLocale(incomingLocale: string): 'pl-PL' | 'en-US' {
-    switch (incomingLocale) {
-        case 'pl':
-            return 'pl-PL'
-        case 'en-GB':
-            return 'en-US'
-        default:
-            return 'pl-PL'
-    }
-}
+import { resolveLocale } from './speak-config'
 
 export function extractBase({ serverData }: RenderOptions): string {
     if (!isDev && serverData?.locale) {
-        return '/build/' + getAppropriateLocale(serverData.locale)
+        return '/build/' + resolveLocale(serverData.locale)
     } else {
         return '/build'
     }
@@ -45,7 +34,7 @@ export default function (opts: RenderToStreamOptions) {
         ...opts,
         // Use container attributes to set attributes on the html tag.
         containerAttributes: {
-            lang: opts.serverData?.locale || config.defaultLocale.lang,
+            lang: resolveLocale(opts.serverData?.locale),
             ...opts.containerAttributes,
         },
         base: extractBase,

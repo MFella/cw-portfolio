@@ -1,25 +1,27 @@
 import type { RequestHandler } from '@builder.io/qwik-city'
-import { config } from '~/speak-config'
+import { resolveLocale } from '~/speak-config'
+
+function getCookieLang(cookie: string | null | undefined): string | null {
+    if (!cookie) return null
+
+    const result = new RegExp(
+        '(?:^|; )' + encodeURIComponent('locale') + '=([^;]*)'
+    ).exec(cookie)
+    if (!result) return null
+
+    try {
+        return JSON.parse(decodeURIComponent(result[1]))['lang'] ?? null
+    } catch {
+        return null
+    }
+}
 
 export const onRequest: RequestHandler = ({ request, locale }) => {
-    const cookie = request.headers?.get('cookie')
-    const acceptLanguage = request.headers?.get('accept-language')
+    const cookieLang = getCookieLang(request.headers?.get('cookie'))
+    const acceptLanguage = request.headers
+        ?.get('accept-language')
+        ?.split(';')[0]
+        ?.split(',')[0]
 
-    let lang: string | null = null
-    if (cookie) {
-        const result = new RegExp(
-            '(?:^|; )' + encodeURIComponent('locale') + '=([^;]*)'
-        ).exec(cookie)
-        if (result) {
-            lang = JSON.parse(result[1])['lang']
-        }
-    }
-
-    if (!lang) {
-        if (acceptLanguage) {
-            lang = acceptLanguage.split(';')[0]?.split(',')[0]
-        }
-    }
-
-    locale(lang || config.defaultLocale.lang)
+    locale(resolveLocale(cookieLang || acceptLanguage))
 }
